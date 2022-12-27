@@ -1,0 +1,29 @@
+.header {
+    position: absolute  ;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 10vh;
+    background-color: aqua;
+}
+
+ul {
+    
+    display: grid;
+    grid-template-columns: repeat(5, 1fr) 0.5fr 0.5fr;
+    grid-template-areas: '';
+    justify-items: center;
+    align-items: center;
+    width: 70vw;
+}
+
+li {
+    list-style-type: none;
+}
+
+.logo {
+    
+}
