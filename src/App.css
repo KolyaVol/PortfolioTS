@@ -4,10 +4,15 @@
     left: 0;
     display: grid;
     grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 5vw 90vw;
+    grid-template-rows: 10vh 90vh 100vh 50vh max-content 20vh;
     grid-template-areas: 
         '. header header header header .'
-        '. . . . . .';
+        '. header header header header .'
+        '. . . . . . '
+        '. skills skills skills skills .'
+        '. . . . . .'
+        ;
+        
     width: 100vw;
     background-color: #fff;
     min-height: 100vh;

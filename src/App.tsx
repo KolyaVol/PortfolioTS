@@ -3,6 +3,7 @@ import Header from './Components/Header/Header';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { userSlice } from './store/reducers/UserSlice';
 import './App.css'
+import MySkills from './Components/MySkills/MySkills';
 
 function App() {
 
@@ -13,7 +14,7 @@ function App() {
   return (
     <div className="app">
       <Header></Header> 
-      
+      <MySkills/>
     </div>
   );
 }

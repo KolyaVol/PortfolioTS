@@ -1,5 +1,21 @@
 header {
     grid-area: header;
+    display: grid;
+    grid-template-columns: 100%;
+    grid-template-rows: 10vh 90vh;
+    grid-template-areas: 
+        'nav'
+        'figure';
+
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    
+}
+
+nav {
+   grid-area: nav;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -7,7 +23,7 @@ header {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: aqua;
+    background-color: aqua; 
 }
 
 ul {
@@ -18,6 +34,7 @@ ul {
     justify-items: center;
     align-items: center;
     width: 100%;
+    
 }
 ul:first-child {
     justify-items: flex-start;
@@ -29,7 +46,6 @@ li {
     justify-content: space-between;
     align-items: center;
 }
-
 .logo {
     
 }
@@ -92,3 +108,24 @@ input:checked+.slider:before {
 .slider.round:before {
     border-radius: 50%;
 }
+
+figure {
+    grid-area: figure;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+
+    margin: 10vh 0;
+}
+
+.header_img {
+    height: 100%;
+    width: 100%;
+}
+
+.header_figcaption {
+    width: 50%;
+}
+
+
+
