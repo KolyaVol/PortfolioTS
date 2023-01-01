@@ -1,36 +1,25 @@
-import React from 'react'
-import './Header.css'
+import MyCheckBox from "../UI/MyCheckBox/MyCheckBox";
+import "./Header.css";
 
 export default function Header() {
-
-  return (
+	return (
 		<header>
 			<nav>
-				<ul>
+				<ul className="nav__list">
 					<li className="logo">LOGO</li>
 					<li>ABOUT ME</li>
 					<li>MY PROJECTS</li>
 					<li>CONTACTS</li>
-					<li>
-						<span>EN</span>
-						<label className="switch">
-							<input type="checkbox" />
-							<span className="slider round"></span>
-						</label>
-					</li>
-					<li>
-						<span>DARK</span>
-						<label className="switch">
-							<input type="checkbox" />
-							<span className="slider round"></span>
-						</label>
+					<li className="swithces">
+						<MyCheckBox title={"EN"} />
+						<MyCheckBox title={"DARK"} />
 					</li>
 				</ul>
 			</nav>
 
-			<figure>
-				<img className="header_img" src="" alt="look at me" />
-				<figcaption className="header_figcaption">
+			<figure className="header__figure">
+				<img className="header__img" src="" alt="look at me" />
+				<figcaption className="header__figcaption">
 					<h2>Hello!</h2>
 					<h1>
 						I'm Nikolai

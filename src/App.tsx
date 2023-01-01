@@ -1,9 +1,10 @@
-import React from 'react';
 import Header from './Components/Header/Header';
 import { useAppDispatch, useAppSelector } from './hooks/redux';
 import { userSlice } from './store/reducers/UserSlice';
 import './App.css'
 import MySkills from './Components/MySkills/MySkills';
+import AboutMe from './Components/AboutMe/AboutMe';
+import ProjectList from './Components/ProjectList/ProjectList';
 
 function App() {
 
@@ -14,7 +15,9 @@ function App() {
   return (
     <div className="app">
       <Header></Header> 
+      <AboutMe/>
       <MySkills/>
+      <ProjectList/>
     </div>
   );
 }

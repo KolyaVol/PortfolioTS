@@ -1,23 +1,22 @@
+html {
+    font-size: 10px;
+}
 .app {
     position: absolute;
     top: 0;
     left: 0;
     display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    grid-template-rows: 10vh 90vh 100vh 50vh max-content 20vh;
+    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 100vh 60vh 50vh max-content 20vh;
     grid-template-areas: 
-        '. header header header header .'
-        '. header header header header .'
-        '. . . . . . '
-        '. skills skills skills skills .'
-        '. . . . . .'
+        
+        '. header .'
+        '. aboutMe . '
+        '. skills .'
+        '. projectList .'
         ;
         
     width: 100vw;
     background-color: #fff;
     min-height: 100vh;
-}
-
-h1 {
-    width: 70vw;
 }
