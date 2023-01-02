@@ -1,5 +1,7 @@
 html {
     font-size: 10px;
+    background-color: rgb(34, 30, 30);
+    color: #fff;
 }
 .app {
     position: absolute;
@@ -17,6 +19,5 @@ html {
         ;
         
     width: 100vw;
-    background-color: #fff;
     min-height: 100vh;
 }

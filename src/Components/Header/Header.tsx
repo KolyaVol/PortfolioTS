@@ -1,7 +1,16 @@
+import { useState } from "react";
 import MyCheckBox from "../UI/MyCheckBox/MyCheckBox";
 import "./Header.css";
 
 export default function Header() {
+	const [checked, setChecked] = useState(true);
+
+	const themeSwitch = () => {
+		setChecked(!checked);
+		localStorage.getItem("theme")
+			? localStorage.removeItem("theme")
+			: localStorage.setItem("theme", "dark");
+	};
 	return (
 		<header>
 			<nav>
@@ -12,7 +21,10 @@ export default function Header() {
 					<li>CONTACTS</li>
 					<li className="swithces">
 						<MyCheckBox title={"EN"} />
-						<MyCheckBox title={"DARK"} />
+						<MyCheckBox title={"DARK"} 
+						state={checked}
+						setState={setChecked}
+						handler={themeSwitch} />
 					</li>
 				</ul>
 			</nav>

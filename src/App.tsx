@@ -1,24 +1,30 @@
-import Header from './Components/Header/Header';
-import { useAppDispatch, useAppSelector } from './hooks/redux';
-import { userSlice } from './store/reducers/UserSlice';
-import './App.css'
-import MySkills from './Components/MySkills/MySkills';
-import AboutMe from './Components/AboutMe/AboutMe';
-import ProjectList from './Components/ProjectList/ProjectList';
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "./hooks/redux";
+import { themeSlice } from "./store/reducers/ThemeSlice";
+import Header from "./Components/Header/Header";
+import MySkills from "./Components/MySkills/MySkills";
+import AboutMe from "./Components/AboutMe/AboutMe";
+import ProjectList from "./Components/ProjectList/ProjectList";
+import "./App.css";
 
 function App() {
+	const dispatch = useAppDispatch();
+	const { theme } = useAppSelector((state) => state.themeReducer);
+	const { toLightTheme } = themeSlice.actions;
+	const { toDarkTheme } = themeSlice.actions;
+	useEffect(() => {
+		localStorage.getItem("theme")?
+			dispatch(toDarkTheme()):
+			dispatch(toLightTheme())
+		}, []);
 
-  const {count} = useAppSelector(state=>state.userReducer)
-  const {increment} = userSlice.actions;
-  const dispatch = useAppDispatch
-
-  return (
-    <div className="app">
-      <Header></Header> 
-      <AboutMe/>
-      <MySkills/>
-      <ProjectList/>
-    </div>
-  );
+	return (
+		<div className="app">
+			<Header></Header>
+			<AboutMe />
+			<MySkills />
+			<ProjectList />
+		</div>
+	);
 }
 export default App;

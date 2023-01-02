@@ -1,8 +1,8 @@
-.myCheckBox {
+.swithcer {
 display: flex;
 margin-bottom: 0.5vw;
 }
-.myCheckBox_title {
+.swithcer__title {
     font-size: 1.4rem;
     margin-right: 0.5vw;
 }
@@ -43,7 +43,7 @@ margin-bottom: 0.5vw;
 }
 
 input:checked+.slider {
-    background-color: #2196F3;
+    background-color: #0f1113;
 }
 
 input:focus+.slider {

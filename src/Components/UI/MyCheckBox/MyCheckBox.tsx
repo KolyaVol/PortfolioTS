@@ -1,16 +1,22 @@
 import './MyCheckBox.css'
 
 interface Props {
-    title: string,
-    clickHandler?: any
+	title: string;
+	handler?: any;
+	state?: boolean;
+	setState?: any;
 }
 
 export default function MyCheckBox(props: Props) {
-  return (
-		<div className="myCheckBox">
-			<span className="myCheckBox_title">{props.title}</span>
+	return (
+		<div className="swithcer">
+			<span className="swithcer__title">{props.title}</span>
 			<label className="switch">
-				<input type="checkbox" />
+				<input
+					checked={props.state}
+					onChange={() => props.setState(!props.state)}
+					type="checkbox"
+				/>
 				<span className="slider round"></span>
 			</label>
 		</div>
