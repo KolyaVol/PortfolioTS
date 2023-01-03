@@ -14,7 +14,7 @@ export default function MyCheckBox(props: Props) {
 			<label className="switch">
 				<input
 					checked={props.state}
-					onChange={() => props.setState(!props.state)}
+					onChange={() => props.handler()}
 					type="checkbox"
 				/>
 				<span className="slider round"></span>

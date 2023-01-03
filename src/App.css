@@ -1,7 +1,9 @@
 html {
     font-size: 10px;
-    background-color: rgb(34, 30, 30);
-    color: #fff;
+}
+
+body {
+    transition: all 1s;
 }
 .app {
     position: absolute;
@@ -20,4 +22,10 @@ html {
         
     width: 100vw;
     min-height: 100vh;
+}
+
+.dark {
+    background-color: black;
+    color: azure;
+    transition: all 1s;
 }

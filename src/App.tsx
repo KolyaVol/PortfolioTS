@@ -1,6 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./hooks/redux";
-import { themeSlice } from "./store/reducers/ThemeSlice";
+import { useAppSelector } from "./hooks/redux";
 import Header from "./Components/Header/Header";
 import MySkills from "./Components/MySkills/MySkills";
 import AboutMe from "./Components/AboutMe/AboutMe";
@@ -8,15 +7,14 @@ import ProjectList from "./Components/ProjectList/ProjectList";
 import "./App.css";
 
 function App() {
-	const dispatch = useAppDispatch();
-	const { theme } = useAppSelector((state) => state.themeReducer);
-	const { toLightTheme } = themeSlice.actions;
-	const { toDarkTheme } = themeSlice.actions;
+	
+	const { isDark } = useAppSelector((state) => state.themeReducer);
+	
 	useEffect(() => {
-		localStorage.getItem("theme")?
-			dispatch(toDarkTheme()):
-			dispatch(toLightTheme())
-		}, []);
+		isDark
+			? document.body.classList.add("dark")
+			: document.body.classList.remove("dark");
+		}, [isDark]);
 
 	return (
 		<div className="app">

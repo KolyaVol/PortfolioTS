@@ -1,16 +1,31 @@
-import { useState } from "react";
+import { useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "../../hooks/redux";
+import { themeSlice } from "../../store/reducers/ThemeSlice";
 import MyCheckBox from "../UI/MyCheckBox/MyCheckBox";
 import "./Header.css";
 
 export default function Header() {
-	const [checked, setChecked] = useState(true);
+	const dispatch = useAppDispatch();
+	const { isDark } = useAppSelector((state) => state.themeReducer);
+	const { toLightTheme } = themeSlice.actions;
+	const { toDarkTheme } = themeSlice.actions;
+
+	useEffect(() => {
+		localStorage.getItem("theme")
+			? dispatch(toDarkTheme())
+			: dispatch(toLightTheme());
+	}, []);
 
 	const themeSwitch = () => {
-		setChecked(!checked);
-		localStorage.getItem("theme")
-			? localStorage.removeItem("theme")
-			: localStorage.setItem("theme", "dark");
+		if (isDark) {
+			dispatch(toLightTheme());
+			localStorage.removeItem("theme");
+		} else {
+			dispatch(toDarkTheme());
+			localStorage.setItem("theme", "dark");
+		}
 	};
+
 	return (
 		<header>
 			<nav>
@@ -21,10 +36,11 @@ export default function Header() {
 					<li>CONTACTS</li>
 					<li className="swithces">
 						<MyCheckBox title={"EN"} />
-						<MyCheckBox title={"DARK"} 
-						state={checked}
-						setState={setChecked}
-						handler={themeSwitch} />
+						<MyCheckBox
+							title={isDark ? "Dark" : "Light"}
+							state={isDark}
+							handler={themeSwitch}
+						/>
 					</li>
 				</ul>
 			</nav>
