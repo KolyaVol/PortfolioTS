@@ -1,14 +1,14 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
-import { themeSlice } from "../../store/reducers/ThemeSlice";
+import { switcherSlice } from "../../store/reducers/SwitcherSlice";
 import MyCheckBox from "../UI/MyCheckBox/MyCheckBox";
 import "./Header.css";
 
 export default function Header() {
 	const dispatch = useAppDispatch();
-	const { isDark } = useAppSelector((state) => state.themeReducer);
-	const { toLightTheme } = themeSlice.actions;
-	const { toDarkTheme } = themeSlice.actions;
+	const { isDark } = useAppSelector((state) => state.switcherReducer);
+	const { toLightTheme } = switcherSlice.actions;
+	const { toDarkTheme } = switcherSlice.actions;
 
 	useEffect(() => {
 		localStorage.getItem("theme")

@@ -8,7 +8,7 @@ import "./App.css";
 
 function App() {
 	
-	const { isDark } = useAppSelector((state) => state.themeReducer);
+	const { isDark } = useAppSelector((state) => state.switcherReducer);
 	
 	useEffect(() => {
 		isDark

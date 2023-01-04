@@ -1,8 +1,10 @@
 import { combineReducers, configureStore } from "@reduxjs/toolkit";
-import themeReducer from "./reducers/ThemeSlice";
+import langReducer from "./reducers/LangSlice";
+import switcherReducer from "./reducers/SwitcherSlice";
 
 const rootReducer = combineReducers({
-    themeReducer
+    switcherReducer,
+    langReducer
 })
 
 export const setupStore = () => {

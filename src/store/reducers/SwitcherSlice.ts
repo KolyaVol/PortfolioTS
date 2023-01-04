@@ -1,15 +1,16 @@
 import {createSlice} from "@reduxjs/toolkit"
 
-interface UserState {
+interface SwitcherState {
     isDark: boolean
-    
+    isEN: boolean
 }
 
-const initialState: UserState = {
-    isDark: false
-}
+const initialState: SwitcherState = {
+	isDark: false,
+	isEN: false,
+};
 
-export const themeSlice = createSlice({
+export const switcherSlice = createSlice({
     name: 'theme',
     initialState,
     reducers: {
@@ -23,5 +24,5 @@ export const themeSlice = createSlice({
 }
     
 )
-export const { toDarkTheme, toLightTheme } = themeSlice.actions;
-export default themeSlice.reducer;
+export const { toDarkTheme, toLightTheme } = switcherSlice.actions;
+export default switcherSlice.reducer;
