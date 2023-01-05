@@ -2,12 +2,12 @@ import {createSlice} from "@reduxjs/toolkit"
 
 interface SwitcherState {
     isDark: boolean
-    isEN: boolean
+    isRus: boolean
 }
 
 const initialState: SwitcherState = {
 	isDark: false,
-	isEN: false,
+	isRus: false,
 };
 
 export const switcherSlice = createSlice({
@@ -19,10 +19,17 @@ export const switcherSlice = createSlice({
         },
         toLightTheme(state) {
             state.isDark = false
+        },
+        toRu(state) {
+            state.isRus = true
+        },
+        toEn(state) {
+            state.isRus = false
         }
     }
 }
     
 )
-export const { toDarkTheme, toLightTheme } = switcherSlice.actions;
+export const { toDarkTheme, toLightTheme, toRu, toEn } =
+	switcherSlice.actions;
 export default switcherSlice.reducer;

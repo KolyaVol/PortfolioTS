@@ -1,20 +1,32 @@
 import { useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { switcherSlice } from "../../store/reducers/SwitcherSlice";
+import { langSlice } from "../../store/reducers/LangSlice";
 import MyCheckBox from "../UI/MyCheckBox/MyCheckBox";
 import "./Header.css";
 
 export default function Header() {
 	const dispatch = useAppDispatch();
-	const { isDark } = useAppSelector((state) => state.switcherReducer);
-	const { toLightTheme } = switcherSlice.actions;
-	const { toDarkTheme } = switcherSlice.actions;
+	const { isDark, isRus } = useAppSelector((state) => state.switcherReducer);
+	const { toLightTheme, toDarkTheme, toRu, toEn } =
+		switcherSlice.actions;
+
+	const lang = useAppSelector((state) => state.langReducer);
+	const { toRuLang, toEnLang } = langSlice.actions;
 
 	useEffect(() => {
 		localStorage.getItem("theme")
 			? dispatch(toDarkTheme())
-			: dispatch(toLightTheme());
+			: dispatch(toLightTheme())
+
+		localStorage.getItem("lang")
+			? dispatch(toRu())
+			: dispatch(toEn());	
 	}, []);
+
+	useEffect(() => {
+		isRus ? dispatch(toRuLang()) : dispatch(toEnLang());
+	}, [isRus]);
 
 	const themeSwitch = () => {
 		if (isDark) {
@@ -26,16 +38,30 @@ export default function Header() {
 		}
 	};
 
+	const langSwitch = () => {
+		if (isRus) {
+			dispatch(toEnLang());
+			localStorage.removeItem("lang");
+		} else {
+			dispatch(toRuLang());
+			localStorage.setItem("lang", "ru");
+		}
+	};
+
 	return (
 		<header>
 			<nav>
 				<ul className="nav__list">
 					<li className="logo">LOGO</li>
-					<li>ABOUT ME</li>
+					<li>{lang.aboutMe}</li>
 					<li>MY PROJECTS</li>
 					<li>CONTACTS</li>
 					<li className="swithces">
-						<MyCheckBox title={"EN"} />
+						<MyCheckBox
+							title={isRus ? "Ру" : "En"}
+							state={isRus}
+							handler={langSwitch}
+						/>
 						<MyCheckBox
 							title={isDark ? "Dark" : "Light"}
 							state={isDark}

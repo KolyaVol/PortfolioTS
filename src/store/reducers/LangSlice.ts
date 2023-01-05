@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-const initialState: object = {
+const initialState = {
 	aboutMe: "About me",
 	myProjects: "My projects",
 	contacts: "Contacts",
@@ -18,7 +18,7 @@ export const langSlice = createSlice({
 	name: "theme",
 	initialState,
 	reducers: {
-		toEng(state) {
+		toEnLang(state) {
 			state = {
 				aboutMe: "About me",
 				myProjects: "My projects",
@@ -32,7 +32,7 @@ export const langSlice = createSlice({
 					"Hello again everyone! A little about myself: I've graduated Belarusian State Technological University in 2021, went through the army and worked as a designer in the chemical industry for one year. I start thinking about programming 2 years ago but start learning right after army. Now I've almost a year of experiance in web-programming and I realy enjoy this profession. What you really need to know about me is that I always reach my goal, and right now that goal is to be a good IT specialist. My hobbies are sport, travelling, computer games and the new one - writting code. By trusting me, you will get maximum return for your project!",
 			};
 		},
-		toRu(state) {
+		toRuLang(state) {
 			state = {
 				aboutMe: "Обо мне",
 				myProjects: "Мои проекты",
@@ -48,5 +48,5 @@ export const langSlice = createSlice({
 		},
 	},
 });
-export const { toEng, toRu } = langSlice.actions;
+export const { toEnLang, toRuLang } = langSlice.actions;
 export default langSlice.reducer;

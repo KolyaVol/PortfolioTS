@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppSelector } from "./hooks/redux";
+import { useAppDispatch, useAppSelector } from "./hooks/redux";
 import Header from "./Components/Header/Header";
 import MySkills from "./Components/MySkills/MySkills";
 import AboutMe from "./Components/AboutMe/AboutMe";
@@ -10,11 +10,16 @@ function App() {
 	
 	const { isDark } = useAppSelector((state) => state.switcherReducer);
 	
+	
+
 	useEffect(() => {
 		isDark
 			? document.body.classList.add("dark")
 			: document.body.classList.remove("dark");
-		}, [isDark]);
+	}, [isDark]);
+
+	
+	
 
 	return (
 		<div className="app">
