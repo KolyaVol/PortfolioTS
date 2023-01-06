@@ -11,22 +11,24 @@ export default function Header() {
 	const { toLightTheme, toDarkTheme, toRu, toEn } =
 		switcherSlice.actions;
 
-	const lang = useAppSelector((state) => state.langReducer);
+	const lang = useAppSelector((state) => state.langReducer.lang);
 	const { toRuLang, toEnLang } = langSlice.actions;
 
 	useEffect(() => {
 		localStorage.getItem("theme")
 			? dispatch(toDarkTheme())
-			: dispatch(toLightTheme())
+			: dispatch(toLightTheme());
 
 		localStorage.getItem("lang")
-			? dispatch(toRu())
-			: dispatch(toEn());	
-	}, []);
+			? dispatch(toRu()) 
+			: dispatch(toEn());
+	});
 
 	useEffect(() => {
-		isRus ? dispatch(toRuLang()) : dispatch(toEnLang());
-	}, [isRus]);
+		localStorage.getItem("lang")?
+		dispatch(toRuLang()):
+		dispatch(toEnLang())
+	}, [])
 
 	const themeSwitch = () => {
 		if (isDark) {
@@ -54,11 +56,11 @@ export default function Header() {
 				<ul className="nav__list">
 					<li className="logo">LOGO</li>
 					<li>{lang.aboutMe}</li>
-					<li>MY PROJECTS</li>
-					<li>CONTACTS</li>
+					<li>{lang.myProjects}</li>
+					<li>{lang.contacts}</li>
 					<li className="swithces">
 						<MyCheckBox
-							title={isRus ? "Ру" : "En"}
+							title={isRus ? "Ru" : "En"}
 							state={isRus}
 							handler={langSwitch}
 						/>
@@ -74,16 +76,14 @@ export default function Header() {
 			<figure className="header__figure">
 				<img className="header__img" src="" alt="look at me" />
 				<figcaption className="header__figcaption">
-					<h2>Hello!</h2>
+					<h2>{lang.hello}</h2>
 					<h1>
-						I'm Nikolai
+						{lang.myName}
 						<br />
-						Valoshchik
+						{lang.mySurname}
 					</h1>
 					<h3>
-						I've been doing front-end and some back-end development for a year
-						now. Do you need a responsive website, SPA, or maybe a deploing your
-						app? Then contact me
+						{lang.firstWords}
 					</h3>
 				</figcaption>
 			</figure>

@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { useAppDispatch, useAppSelector } from "./hooks/redux";
+import { useAppSelector } from "./hooks/redux";
 import Header from "./Components/Header/Header";
 import MySkills from "./Components/MySkills/MySkills";
 import AboutMe from "./Components/AboutMe/AboutMe";
