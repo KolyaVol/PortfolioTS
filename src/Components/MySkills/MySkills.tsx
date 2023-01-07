@@ -1,9 +1,14 @@
+import SkillProgressBar from '../UI/SkillProgressBar/SkillProgressBar';
 import './MySkills.css'
 
 export default function MySkills() {
+	
 	return (
 		<ul className="skills">
-			<li>HTML5</li>
+			<li>
+				HTML5
+				<SkillProgressBar/>
+			</li>
 			<li>CSS3</li>
 			<li>Responsive design</li>
 			<li>Git</li>

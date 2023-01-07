@@ -14,6 +14,8 @@ export default function Header() {
 	const lang = useAppSelector((state) => state.langReducer.lang);
 	const { toRuLang, toEnLang } = langSlice.actions;
 
+	const words = Array.from(document.querySelectorAll('.words'))
+	
 	useEffect(() => {
 		localStorage.getItem("theme")
 			? dispatch(toDarkTheme())
@@ -42,10 +44,32 @@ export default function Header() {
 
 	const langSwitch = () => {
 		if (isRus) {
-			dispatch(toEnLang());
+			dispatch(toEn());
+			words.map(item => {
+				item.classList.add("transparent");
+			});
+			setTimeout(() => {
+				words.map((item) => {
+					item.classList.remove("transparent");
+				});
+			}, 500);
+			setTimeout(() => {
+				dispatch(toEnLang())
+			}, 500)
 			localStorage.removeItem("lang");
 		} else {
-			dispatch(toRuLang());
+			dispatch(toRu());
+			words.map((item) => {
+				item.classList.add("transparent");
+			});
+			setTimeout(() => {
+				words.map((item) => {
+					item.classList.remove("transparent");
+				});
+			}, 500);
+			setTimeout(() => {
+				dispatch(toRuLang());
+			}, 500);
 			localStorage.setItem("lang", "ru");
 		}
 	};
@@ -54,10 +78,10 @@ export default function Header() {
 		<header>
 			<nav>
 				<ul className="nav__list">
-					<li className="logo">LOGO</li>
-					<li>{lang.aboutMe}</li>
-					<li>{lang.myProjects}</li>
-					<li>{lang.contacts}</li>
+					<li className="logo words">LOGO</li>
+					<li className="words">{lang.aboutMe}</li>
+					<li className="words">{lang.myProjects}</li>
+					<li className="words">{lang.contacts}</li>
 					<li className="swithces">
 						<MyCheckBox
 							title={isRus ? "Ru" : "En"}
@@ -75,16 +99,14 @@ export default function Header() {
 
 			<figure className="header__figure">
 				<img className="header__img" src="" alt="look at me" />
-				<figcaption className="header__figcaption">
+				<figcaption className="header__figcaption words">
 					<h2>{lang.hello}</h2>
 					<h1>
 						{lang.myName}
 						<br />
 						{lang.mySurname}
 					</h1>
-					<h3>
-						{lang.firstWords}
-					</h3>
+					<h3>{lang.firstWords}</h3>
 				</figcaption>
 			</figure>
 		</header>

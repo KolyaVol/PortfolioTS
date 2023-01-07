@@ -10,7 +10,7 @@ interface Props {
 export default function MyCheckBox(props: Props) {
 	return (
 		<div className="swithcer">
-			<span className="swithcer__title">{props.title}</span>
+			<span className="swithcer__title words">{props.title}</span>
 			<label className="switch">
 				<input
 					checked={props.state}

@@ -29,3 +29,14 @@ body {
     color: azure;
     transition: all 1s;
 }
+
+.words {
+    text-shadow: 0 0 1em rgb(124, 124, 160), 0 0 0.2em rgb(141, 141, 165);
+    opacity: 1;
+    transition: opacity 0.25s;
+}
+
+.transparent {
+    opacity: 0;
+    transition: opacity 0.25s;
+}
