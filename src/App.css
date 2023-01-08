@@ -1,5 +1,6 @@
 html {
     font-size: 10px;
+    text-shadow: 0 0 1em rgb(124, 124, 160), 0 0 0.2em rgb(141, 141, 165);
 }
 
 body {
@@ -11,7 +12,7 @@ body {
     left: 0;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 100vh 60vh 50vh max-content 20vh;
+    grid-template-rows: 100vh 60vh 40vh max-content 20vh;
     grid-template-areas: 
         
         '. header .'
@@ -28,10 +29,11 @@ body {
     background-color: black;
     color: azure;
     transition: all 1s;
+    text-shadow: 0 0 1em rgb(245, 245, 247), 0 0 0.2em rgb(226, 226, 233);
 }
 
 .words {
-    text-shadow: 0 0 1em rgb(124, 124, 160), 0 0 0.2em rgb(141, 141, 165);
+    
     opacity: 1;
     transition: opacity 0.25s;
 }
