@@ -1,3 +1,58 @@
+svg {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5rem;
+  height: 5rem;
+  border: 1px solid violet;
+  transform: rotate(90deg) scale(-1, 1);
+}
 
+circle {
+  stroke: #9a0fe0;
+  stroke-width: 0.5rem;
+  fill: none;
+  stroke-dasharray: 125.6;
+  transition: stroke-dashoffset 2s ease-in-out;
+}
 
+.html5 {
+    stroke-dashoffset: 12.56;
+}
 
+.css3 {
+    stroke-dashoffset: 12.56;
+}
+
+.Responsive {
+    stroke-dashoffset: 25.12;
+}
+
+.Git {
+    stroke-dashoffset: 12.56;
+}
+
+.JavaScript {
+    stroke-dashoffset: 37.68;
+}
+
+.npm {
+    stroke-dashoffset: 75.36;
+}
+
+.NodeJS {
+    stroke-dashoffset: 87.92;
+}
+
+.ReactJS {
+    stroke-dashoffset: 50.24;
+}
+
+.TypeScript {
+    stroke-dashoffset: 87.92;
+}
+
+.disactive {
+    stroke-dashoffset: 125.6;
+}

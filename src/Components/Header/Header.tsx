@@ -27,10 +27,8 @@ export default function Header() {
 	});
 
 	useEffect(() => {
-		localStorage.getItem("lang")?
-		dispatch(toRuLang()):
-		dispatch(toEnLang())
-	}, [])
+		localStorage.getItem("lang") ? dispatch(toRuLang()) : dispatch(toEnLang());
+	}, []);
 
 	const themeSwitch = () => {
 		if (isDark) {
@@ -45,7 +43,7 @@ export default function Header() {
 	const langSwitch = () => {
 		if (isRus) {
 			dispatch(toEn());
-			words.map(item => {
+			words.map((item) => {
 				item.classList.add("transparent");
 			});
 			setTimeout(() => {
@@ -54,8 +52,8 @@ export default function Header() {
 				});
 			}, 500);
 			setTimeout(() => {
-				dispatch(toEnLang())
-			}, 500)
+				dispatch(toEnLang());
+			}, 500);
 			localStorage.removeItem("lang");
 		} else {
 			dispatch(toRu());
