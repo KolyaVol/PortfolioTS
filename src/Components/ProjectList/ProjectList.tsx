@@ -1,12 +1,14 @@
+import { useAppSelector } from "../../hooks/redux";
 import "./ProjectList.css";
 
 export default function ProjectList() {
+	const lang = useAppSelector((state) => state.langReducer.lang);
 	return (
-		<div className="projectList__container">
-			<h2 className="projectList__title">My projects</h2>
+		<main className="projectList__container">
+			<h2 className="projectList__title">{lang.myProjects}</h2>
 			<div className="projectList__template">
 				<figure className="projectList__item">
-					<div className="projectList__item__front">хуй</div>
+					<div className="projectList__item__front"></div>
 					<figcaption className="projectList__item__back">
 						<p>
 							There is some information about current web-app thats i've
@@ -16,7 +18,7 @@ export default function ProjectList() {
 					</figcaption>
 				</figure>
 				<figure className="projectList__item">
-					<div className="projectList__item__front">хуй</div>
+					<div className="projectList__item__front"></div>
 					<figcaption className="projectList__item__back">
 						<p>
 							There is some information about current web-app thats i've
@@ -26,7 +28,7 @@ export default function ProjectList() {
 					</figcaption>
 				</figure>
 				<figure className="projectList__item">
-					<div className="projectList__item__front">хуй</div>
+					<div className="projectList__item__front"></div>
 					<figcaption className="projectList__item__back">
 						<p>
 							There is some information about current web-app thats i've
@@ -36,7 +38,7 @@ export default function ProjectList() {
 					</figcaption>
 				</figure>
 				<figure className="projectList__item">
-					<div className="projectList__item__front">хуй</div>
+					<div className="projectList__item__front"></div>
 					<figcaption className="projectList__item__back">
 						<p>
 							There is some information about current web-app thats i've
@@ -46,7 +48,7 @@ export default function ProjectList() {
 					</figcaption>
 				</figure>
 				<figure className="projectList__item">
-					<div className="projectList__item__front">хуй</div>
+					<div className="projectList__item__front"></div>
 					<figcaption className="projectList__item__back">
 						<p>
 							There is some information about current web-app thats i've
@@ -57,6 +59,6 @@ export default function ProjectList() {
 				</figure>
 
 			</div>
-		</div>
+		</main>
 	);
 }

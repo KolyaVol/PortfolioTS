@@ -1,75 +1,70 @@
 header {
-    grid-area: header;
-    display: grid;
-    grid-template-columns: 100%;
-    grid-template-rows: 10vh 90vh;
-    grid-template-areas: 
-        'nav'
-        'figure';
-    
-    width: 100%;
-    height: 100%;
+	grid-area: header;
+	display: grid;
+	grid-template-columns: 100%;
+	grid-template-rows: 10vh 90vh;
+	grid-template-areas:
+		"nav"
+		"figure";
+
+	width: 100%;
+	height: 100%;
     
 }
 
 nav {
-    grid-area: nav;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    
-    width: 100%;
-    height: 100%;
-    padding: 0;
+	grid-area: nav;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	height: 100%;
+	padding: 0;
 }
 
 .nav__list {
-    display: grid;
-    grid-template-columns: repeat(5, 1fr);
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-    padding-left: 0;
+	display: grid;
+	grid-template-columns: repeat(5, 1fr);
+	justify-items: center;
+	align-items: center;
+	width: 100%;
+	padding-left: 0;
 }
 
 li {
-    list-style-type: none;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
 }
 
 .logo {
-    width: 100%;
-    display: flex;
-    justify-items: start;
+	width: 100%;
+	display: flex;
+	justify-items: start;
 }
 
 .swithces {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-end;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: flex-end;
 }
 
 .header__figure {
-    grid-area: figure;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: 'hf hi';
-    margin: 10vh 0;
+	grid-area: figure;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	grid-template-areas: "hf hi";
+	margin: 10vh 0;
 }
 
 .header__img {
-    grid-area: hi;
+	grid-area: hi;
 }
 
 .header__figcaption {
-    grid-area: hf;
+	grid-area: hf;
 }
-
-
-
-

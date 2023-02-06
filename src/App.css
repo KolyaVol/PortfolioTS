@@ -12,17 +12,27 @@ body {
     left: 0;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 100vh 60vh 40vh max-content 20vh;
+    grid-template-rows: 100vh repeat(4, max-content);
     grid-template-areas: 
         
         '. header .'
         '. aboutMe . '
         '. skills .'
         '. projectList .'
+        '. contacts .'
         ;
         
     width: 100vw;
     min-height: 100vh;
+    font-size: 2rem;
+}
+
+h1 {
+    font-size: 6rem;
+}
+
+h2 {
+    font-size: 4rem;
 }
 
 .dark {
@@ -41,4 +51,22 @@ body {
 .transparent {
     opacity: 0;
     transition: opacity 0.25s;
+}
+
+@media (min-width: 1800px) {
+    html {
+        font-size: 15px;
+    }
+}
+
+@media (min-width: 1450px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 1350px) {
+    html {
+        font-size: 11px;
+    }
 }

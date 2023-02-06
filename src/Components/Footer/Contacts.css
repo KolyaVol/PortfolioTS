@@ -1,0 +1,65 @@
+.contacts {
+	grid-area: contacts;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 4rem;
+}
+
+.contacts__list {
+	display: flex;
+	justify-content: space-evenly;
+	flex-wrap: wrap;
+	width: 100%;
+	
+}
+
+.contacts__item {
+	position: relative;
+	margin: 2vh 0;
+	min-width: 20rem;
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+	transition: all 1s;
+}
+
+.contacts__item > svg {
+	width: 6rem;
+	margin-right: 1rem;
+	left: 1rem;
+	
+}
+
+.contacts__item:hover {
+	transition: all 1s;
+	transform: translateY(-1vh);
+}
+
+.contacts__item:hover > svg {
+	transition: all 1s;
+	transform: translateY(-1vh);
+}
+
+.github {
+	color: #181717;
+	fill: #181717;
+}
+
+.linkedIn {
+	color: #0a66c2;
+	fill: #0a66c2;
+}
+
+.telegram {
+	justify-content: end;
+	color: #26a5e4;
+	fill: #26a5e4;
+}
+
+.vkontakte {
+	justify-content: end;
+	color: #0077ff;
+	fill: #0077ff;
+}
+
