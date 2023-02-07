@@ -1,5 +1,6 @@
 import { useAppSelector } from "../../hooks/redux";
 import SkillProgressBar from "../UI/SkillProgressBar/SkillProgressBar";
+import SkillsSphere from "../UI/SkillsSphere/SkillsSphere";
 
 import "./MySkills.css";
 
@@ -8,6 +9,7 @@ export default function MySkills() {
 	return (
 		<section className="skills">
 			<h2>{lang.mySkills}</h2>
+			<SkillsSphere/>
 			<ul className="skills__list">
 				<li>
 					HTML5

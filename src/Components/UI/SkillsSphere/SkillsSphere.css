@@ -1,0 +1,177 @@
+.skillsSphere {
+	--size: 40rem;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: max-content;
+	height: max-content;
+	margin: 25rem;
+	transform-style: preserve-3d;
+}
+
+.skillsSphere__first-circle,
+.skillsSphere__second-circle,
+.skillsSphere__third-circle {
+	position: absolute;
+	display: grid;
+	align-items: center;
+	justify-items: center;
+	grid-template-columns: repeat(3, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+	width: var(--size);
+	height: var(--size);
+	transform-style: preserve-3d;
+
+	border-radius: 50%;
+}
+
+.skillsSphere__first-circle {
+	--start-angle: 0deg;
+	--finish-angle: 360deg;
+	--x-angle: 0;
+	grid-template-areas:
+		". fcfi ."
+		". . ."
+		". . ."
+		"fcsi . fcti"
+		". . .";
+	animation: rotationy 12s linear infinite;
+}
+
+.skillsSphere__item {
+	width: 5rem;
+	height: 5rem;
+}
+
+.skillsSphere__first-circle > svg {
+	--angle1: 0;
+	--angle2: -90deg;
+	--angle3: -180deg;
+	--angle4: -270deg;
+	--angle5: -360deg;
+	animation: rotationy2 12s linear infinite;
+}
+
+.skillsSphere__first-circle > .skillsSphere__item:nth-child(1) {
+	grid-area: fcfi;
+}
+.skillsSphere__first-circle > .skillsSphere__item:nth-child(2) {
+	grid-area: fcsi;
+}
+.skillsSphere__first-circle > .skillsSphere__item:nth-child(3) {
+	grid-area: fcti;
+}
+
+.skillsSphere__second-circle {
+	--start-angle: 90deg;
+	--finish-angle: 450deg;
+	--x-angle: 0;
+	grid-template-areas:
+		". . ."
+		"scfi . scsi"
+		". . ."
+		". . ."
+		". scti .";
+	animation: rotationy 12s linear infinite;
+}
+
+.skillsSphere__second-circle > svg {
+	--angle1: -90deg;
+	--angle2: -180deg;
+	--angle3: -270deg;
+	--angle4: -360deg;
+	--angle5: -450deg;
+	animation: rotationy2 12s linear infinite;
+}
+
+.skillsSphere__second-circle > .skillsSphere__item:nth-child(1) {
+	grid-area: scfi;
+}
+.skillsSphere__second-circle > .skillsSphere__item:nth-child(2) {
+	grid-area: scsi;
+}
+.skillsSphere__second-circle > .skillsSphere__item:nth-child(3) {
+	grid-area: scti;
+}
+
+.skillsSphere__third-circle {
+	--start-angle: 0;
+	--finish-angle: 360deg;
+	--x-angle: 90deg;
+	grid-template-areas:
+		". . ."
+		"tcfi . tcsi"
+		". . ."
+		"tcti . tcfoi"
+		". . .";
+	animation: rotationy 12s linear infinite;
+}
+
+.skillsSphere__third-circle > svg {
+	--x-angle: -90deg;
+	--angle1: 0;
+	--angle2: 90deg;
+	--angle3: 180deg;
+	--angle4: 270deg;
+	--angle5: 360deg;
+	animation: rotationz 12s linear infinite;
+}
+
+.skillsSphere__third-circle > .skillsSphere__item:nth-child(1) {
+	grid-area: tcfi;
+}
+.skillsSphere__third-circle > .skillsSphere__item:nth-child(2) {
+	grid-area: tcsi;
+}
+.skillsSphere__third-circle > .skillsSphere__item:nth-child(3) {
+	grid-area: tcti;
+}
+.skillsSphere__third-circle > .skillsSphere__item:nth-child(4) {
+	grid-area: tcfoi;
+}
+
+@keyframes rotationy {
+	0% {
+		transform: rotatey(var(--start-angle)) rotateX(var(--x-angle));
+	}
+	100% {
+		transform: rotatey(var(--finish-angle)) rotateX(var(--x-angle));
+	}
+}
+
+@keyframes rotationy2 {
+	0% {
+		transform: rotatey(var(--angle1));
+	}
+	25% {
+		transform: rotatey(var(--angle2));
+	}
+	50% {
+		transform: rotatey(var(--angle3));
+	}
+	75% {
+		transform: rotatey(var(--angle4));
+	}
+	100% {
+		transform: rotatey(var(--angle5));
+	}
+}
+
+@keyframes rotationz {
+	0% {
+		transform: rotatez(var(--angle1)) rotateX(var(--x-angle));
+	}
+	25% {
+		transform: rotatez(var(--angle2)) rotateX(var(--x-angle));
+	}
+	50% {
+		transform: rotatez(var(--angle3)) rotateX(var(--x-angle));
+	}
+	75% {
+		transform: rotatez(var(--angle4)) rotateX(var(--x-angle));
+	}
+	100% {
+		transform: rotatez(var(--angle5)) rotateX(var(--x-angle));
+	}
+}
