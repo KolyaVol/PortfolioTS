@@ -8,40 +8,39 @@
 	height: max-content;
 	margin: 25rem;
 	transform-style: preserve-3d;
+	animation: block-float 12s linear infinite;
 }
 
 .skillsSphere__first-circle,
-.skillsSphere__second-circle,
-.skillsSphere__third-circle {
+.skillsSphere__second-circle {
 	position: absolute;
 	display: grid;
 	align-items: center;
 	justify-items: center;
-	grid-template-columns: repeat(3, 1fr);
+	grid-template-columns: repeat(5, 1fr);
 	grid-template-rows: repeat(5, 1fr);
 	width: var(--size);
 	height: var(--size);
 	transform-style: preserve-3d;
-
-	border-radius: 50%;
 }
 
 .skillsSphere__first-circle {
 	--start-angle: 0deg;
 	--finish-angle: 360deg;
-	--x-angle: 0;
 	grid-template-areas:
-		". fcfi ."
-		". . ."
-		". . ."
-		"fcsi . fcti"
-		". . .";
-	animation: rotationy 12s linear infinite;
+		". . fcfi . ."
+		". fcsi . fcti ."
+		"fcfoi . . . fcfii"
+		". fcsii . fcsei ."
+		". . . . .";
+	animation: circle-rotation 12s linear infinite;
 }
 
 .skillsSphere__item {
 	width: 5rem;
 	height: 5rem;
+	cursor: pointer;
+	border-radius: 50%;
 }
 
 .skillsSphere__first-circle > svg {
@@ -50,30 +49,47 @@
 	--angle3: -180deg;
 	--angle4: -270deg;
 	--angle5: -360deg;
-	animation: rotationy2 12s linear infinite;
 }
 
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(1) {
 	grid-area: fcfi;
+	animation: item-shine 6s linear 1s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(2) {
 	grid-area: fcsi;
+	animation: item-shine 6s linear 2s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(3) {
 	grid-area: fcti;
+	animation: item-shine 6s linear 3s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__first-circle > .skillsSphere__item:nth-child(4) {
+	grid-area: fcfoi;
+	animation: item-shine 6s linear 4s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__first-circle > .skillsSphere__item:nth-child(5) {
+	grid-area: fcfii;
+	animation: item-shine 6s linear 5s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__first-circle > .skillsSphere__item:nth-child(6) {
+	grid-area: fcsii;
+	animation: item-shine 6s linear 6s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__first-circle > .skillsSphere__item:nth-child(7) {
+	grid-area: fcsei;
+	animation: item-shine 6s linear 7s infinite, item-rotation 12s linear infinite;
 }
 
 .skillsSphere__second-circle {
 	--start-angle: 90deg;
 	--finish-angle: 450deg;
-	--x-angle: 0;
 	grid-template-areas:
-		". . ."
-		"scfi . scsi"
-		". . ."
-		". . ."
-		". scti .";
-	animation: rotationy 12s linear infinite;
+		". . . . ."
+		". scfi . scsi ."
+		"scti . . . scfoi"
+		". scfii . scsii ."
+		". . scsei . .";
+	animation: circle-rotation 12s linear infinite;
 }
 
 .skillsSphere__second-circle > svg {
@@ -82,65 +98,83 @@
 	--angle3: -270deg;
 	--angle4: -360deg;
 	--angle5: -450deg;
-	animation: rotationy2 12s linear infinite;
 }
 
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(1) {
 	grid-area: scfi;
+	animation: item-shine 6s linear 1s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(2) {
 	grid-area: scsi;
+	animation: item-shine 6s linear 2s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(3) {
 	grid-area: scti;
+	animation: item-shine 6s linear 3s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__second-circle > .skillsSphere__item:nth-child(4) {
+	grid-area: scfoi;
+	animation: item-shine 6s linear 4s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__second-circle > .skillsSphere__item:nth-child(5) {
+	grid-area: scfii;
+	animation: item-shine 6s linear 5s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__second-circle > .skillsSphere__item:nth-child(6) {
+	grid-area: scsii;
+	animation: item-shine 6s linear 6s infinite, item-rotation 12s linear infinite;
+}
+.skillsSphere__second-circle > .skillsSphere__item:nth-child(7) {
+	grid-area: scsei;
+	animation: item-shine 6s linear 7s infinite, item-rotation 12s linear infinite;
 }
 
-.skillsSphere__third-circle {
-	--start-angle: 0;
-	--finish-angle: 360deg;
-	--x-angle: 90deg;
-	grid-template-areas:
-		". . ."
-		"tcfi . tcsi"
-		". . ."
-		"tcti . tcfoi"
-		". . .";
-	animation: rotationy 12s linear infinite;
-}
-
-.skillsSphere__third-circle > svg {
-	--x-angle: -90deg;
-	--angle1: 0;
-	--angle2: 90deg;
-	--angle3: 180deg;
-	--angle4: 270deg;
-	--angle5: 360deg;
-	animation: rotationz 12s linear infinite;
-}
-
-.skillsSphere__third-circle > .skillsSphere__item:nth-child(1) {
-	grid-area: tcfi;
-}
-.skillsSphere__third-circle > .skillsSphere__item:nth-child(2) {
-	grid-area: tcsi;
-}
-.skillsSphere__third-circle > .skillsSphere__item:nth-child(3) {
-	grid-area: tcti;
-}
-.skillsSphere__third-circle > .skillsSphere__item:nth-child(4) {
-	grid-area: tcfoi;
-}
-
-@keyframes rotationy {
+@keyframes circle-rotation {
 	0% {
-		transform: rotatey(var(--start-angle)) rotateX(var(--x-angle));
+		transform: rotatey(var(--start-angle));
 	}
 	100% {
-		transform: rotatey(var(--finish-angle)) rotateX(var(--x-angle));
+		transform: rotatey(var(--finish-angle));
 	}
 }
 
-@keyframes rotationy2 {
+@keyframes block-float {
+	0% {
+		transform: translateY(0) rotateZ(0);
+	}
+	25% {
+		transform: translateY(3rem) rotateZ(3deg);
+	}
+	50% {
+		transform: translateY(0) rotateZ(0);
+	}
+	75% {
+		transform: translateY(3rem) rotateZ(-3deg);
+	}
+	100% {
+		transform: translateY(0) rotateZ(0);
+	}
+}
+
+@keyframes item-shine {
+	0% {
+		box-shadow: "";
+	}
+	25% {
+		box-shadow: 0 0 1rem #fff, 0 0 1.5rem #000, 0 0 2rem #fff;
+	}
+	50% {
+		box-shadow: 0 0 3rem #fff, 0 0 5rem #000, 0 0 8rem #fff;
+	}
+	75% {
+		box-shadow: 0 0 1rem #fff, 0 0 1.5rem #000, 0 0 2rem #fff;
+	}
+	100% {
+		box-shadow: "";
+	}
+}
+
+@keyframes item-rotation {
 	0% {
 		transform: rotatey(var(--angle1));
 	}
@@ -155,23 +189,5 @@
 	}
 	100% {
 		transform: rotatey(var(--angle5));
-	}
-}
-
-@keyframes rotationz {
-	0% {
-		transform: rotatez(var(--angle1)) rotateX(var(--x-angle));
-	}
-	25% {
-		transform: rotatez(var(--angle2)) rotateX(var(--x-angle));
-	}
-	50% {
-		transform: rotatez(var(--angle3)) rotateX(var(--x-angle));
-	}
-	75% {
-		transform: rotatez(var(--angle4)) rotateX(var(--x-angle));
-	}
-	100% {
-		transform: rotatez(var(--angle5)) rotateX(var(--x-angle));
 	}
 }
