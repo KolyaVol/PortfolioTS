@@ -34,13 +34,22 @@
 		". fcsii . fcsei ."
 		". . . . .";
 	animation: circle-rotation 12s linear infinite;
+	animation-play-state: running;
 }
 
 .skillsSphere__item {
 	width: 5rem;
 	height: 5rem;
 	cursor: pointer;
-	border-radius: 50%;
+	border-radius: 1rem;
+	animation: item-rotation 12s linear infinite;
+	animation-play-state: running;
+}
+
+.skillsSphere:hover .skillsSphere__item,
+.skillsSphere:hover .skillsSphere__first-circle,
+.skillsSphere:hover .skillsSphere__second-circle {
+	animation-play-state: paused;
 }
 
 .skillsSphere__first-circle > svg {
@@ -53,31 +62,24 @@
 
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(1) {
 	grid-area: fcfi;
-	animation: item-shine 6s linear 1s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(2) {
 	grid-area: fcsi;
-	animation: item-shine 6s linear 2s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(3) {
 	grid-area: fcti;
-	animation: item-shine 6s linear 3s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(4) {
 	grid-area: fcfoi;
-	animation: item-shine 6s linear 4s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(5) {
 	grid-area: fcfii;
-	animation: item-shine 6s linear 5s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(6) {
 	grid-area: fcsii;
-	animation: item-shine 6s linear 6s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__first-circle > .skillsSphere__item:nth-child(7) {
 	grid-area: fcsei;
-	animation: item-shine 6s linear 7s infinite, item-rotation 12s linear infinite;
 }
 
 .skillsSphere__second-circle {
@@ -86,7 +88,7 @@
 	grid-template-areas:
 		". . . . ."
 		". scfi . scsi ."
-		"scti . . . scfoi"
+		"scti . skillsSphere__photo . scfoi"
 		". scfii . scsii ."
 		". . scsei . .";
 	animation: circle-rotation 12s linear infinite;
@@ -102,31 +104,71 @@
 
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(1) {
 	grid-area: scfi;
-	animation: item-shine 6s linear 1s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(2) {
 	grid-area: scsi;
-	animation: item-shine 6s linear 2s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(3) {
 	grid-area: scti;
-	animation: item-shine 6s linear 3s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(4) {
 	grid-area: scfoi;
-	animation: item-shine 6s linear 4s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(5) {
 	grid-area: scfii;
-	animation: item-shine 6s linear 5s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(6) {
 	grid-area: scsii;
-	animation: item-shine 6s linear 6s infinite, item-rotation 12s linear infinite;
 }
 .skillsSphere__second-circle > .skillsSphere__item:nth-child(7) {
 	grid-area: scsei;
-	animation: item-shine 6s linear 7s infinite, item-rotation 12s linear infinite;
+}
+
+.paused {
+	animation-play-state: paused;
+}
+
+.js {
+	fill: #f7df1e;
+}
+.react {
+	fill: #61dafb;
+}
+.nodeJs {
+	fill: #339933;
+}
+.redux {
+	fill: #764abc;
+}
+.express {
+	fill: #000000;
+}
+.react-router {
+	fill: #ca4245;
+}
+.jwt {
+	fill: #000000;
+}
+.html {
+	fill: #e34f26;
+}
+.photoshop {
+	fill: #31a8ff;
+}
+.css {
+	fill: #1572b6;
+}
+.git {
+	fill: #f05032;
+}
+.sass {
+	fill: #cc6699;
+}
+.ts {
+	fill: #3178c6;
+}
+.figma {
+	fill: #f24e1e;
 }
 
 @keyframes circle-rotation {
