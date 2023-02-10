@@ -1,4 +1,4 @@
-.skillsSphere {
+.skills-sphere {
 	--size: 40rem;
 	position: relative;
 	display: flex;
@@ -11,8 +11,8 @@
 	animation: block-float 12s linear infinite;
 }
 
-.skillsSphere__first-circle,
-.skillsSphere__second-circle {
+.skills-sphere__first-circle,
+.skills-sphere__second-circle {
 	position: absolute;
 	display: grid;
 	align-items: center;
@@ -24,7 +24,7 @@
 	transform-style: preserve-3d;
 }
 
-.skillsSphere__first-circle {
+.skills-sphere__first-circle {
 	--start-angle: 0deg;
 	--finish-angle: 360deg;
 	grid-template-areas:
@@ -37,22 +37,40 @@
 	animation-play-state: running;
 }
 
-.skillsSphere__item {
+.skills-sphere__item {
+	display: flex;
+	align-items: center;
+	justify-content: center;
 	width: 5rem;
 	height: 5rem;
-	cursor: pointer;
 	border-radius: 1rem;
+	cursor: pointer;
 	animation: item-rotation 12s linear infinite;
 	animation-play-state: running;
 }
 
-.skillsSphere:hover .skillsSphere__item,
-.skillsSphere:hover .skillsSphere__first-circle,
-.skillsSphere:hover .skillsSphere__second-circle {
+.skills-sphere__descr {
+	position: absolute;
+	width: max-content;
+	max-width: 60vw;
+	height: max-content;
+	padding: 1.5rem;
+	border-radius: 40%;
+	visibility: hidden;
+	z-index: 20;
+}
+
+.skills-sphere__item:hover p {
+	visibility: visible;
+}
+
+.skills-sphere:hover .skills-sphere__item,
+.skills-sphere:hover .skills-sphere__first-circle,
+.skills-sphere:hover .skills-sphere__second-circle {
 	animation-play-state: paused;
 }
 
-.skillsSphere__first-circle > svg {
+.skills-sphere__first-circle > div {
 	--angle1: 0;
 	--angle2: -90deg;
 	--angle3: -180deg;
@@ -60,41 +78,41 @@
 	--angle5: -360deg;
 }
 
-.skillsSphere__first-circle > .skillsSphere__item:nth-child(1) {
+.skills-sphere__first-circle > .skills-sphere__item:nth-child(1) {
 	grid-area: fcfi;
 }
-.skillsSphere__first-circle > .skillsSphere__item:nth-child(2) {
+.skills-sphere__first-circle > .skills-sphere__item:nth-child(2) {
 	grid-area: fcsi;
 }
-.skillsSphere__first-circle > .skillsSphere__item:nth-child(3) {
+.skills-sphere__first-circle > .skills-sphere__item:nth-child(3) {
 	grid-area: fcti;
 }
-.skillsSphere__first-circle > .skillsSphere__item:nth-child(4) {
+.skills-sphere__first-circle > .skills-sphere__item:nth-child(4) {
 	grid-area: fcfoi;
 }
-.skillsSphere__first-circle > .skillsSphere__item:nth-child(5) {
+.skills-sphere__first-circle > .skills-sphere__item:nth-child(5) {
 	grid-area: fcfii;
 }
-.skillsSphere__first-circle > .skillsSphere__item:nth-child(6) {
+.skills-sphere__first-circle > .skills-sphere__item:nth-child(6) {
 	grid-area: fcsii;
 }
-.skillsSphere__first-circle > .skillsSphere__item:nth-child(7) {
+.skills-sphere__first-circle > .skills-sphere__item:nth-child(7) {
 	grid-area: fcsei;
 }
 
-.skillsSphere__second-circle {
+.skills-sphere__second-circle {
 	--start-angle: 90deg;
 	--finish-angle: 450deg;
 	grid-template-areas:
 		". . . . ."
 		". scfi . scsi ."
-		"scti . skillsSphere__photo . scfoi"
+		"scti . skills-sphere__photo . scfoi"
 		". scfii . scsii ."
 		". . scsei . .";
 	animation: circle-rotation 12s linear infinite;
 }
 
-.skillsSphere__second-circle > svg {
+.skills-sphere__second-circle > div {
 	--angle1: -90deg;
 	--angle2: -180deg;
 	--angle3: -270deg;
@@ -102,25 +120,25 @@
 	--angle5: -450deg;
 }
 
-.skillsSphere__second-circle > .skillsSphere__item:nth-child(1) {
+.skills-sphere__second-circle > .skills-sphere__item:nth-child(1) {
 	grid-area: scfi;
 }
-.skillsSphere__second-circle > .skillsSphere__item:nth-child(2) {
+.skills-sphere__second-circle > .skills-sphere__item:nth-child(2) {
 	grid-area: scsi;
 }
-.skillsSphere__second-circle > .skillsSphere__item:nth-child(3) {
+.skills-sphere__second-circle > .skills-sphere__item:nth-child(3) {
 	grid-area: scti;
 }
-.skillsSphere__second-circle > .skillsSphere__item:nth-child(4) {
+.skills-sphere__second-circle > .skills-sphere__item:nth-child(4) {
 	grid-area: scfoi;
 }
-.skillsSphere__second-circle > .skillsSphere__item:nth-child(5) {
+.skills-sphere__second-circle > .skills-sphere__item:nth-child(5) {
 	grid-area: scfii;
 }
-.skillsSphere__second-circle > .skillsSphere__item:nth-child(6) {
+.skills-sphere__second-circle > .skills-sphere__item:nth-child(6) {
 	grid-area: scsii;
 }
-.skillsSphere__second-circle > .skillsSphere__item:nth-child(7) {
+.skills-sphere__second-circle > .skills-sphere__item:nth-child(7) {
 	grid-area: scsei;
 }
 
@@ -134,20 +152,20 @@
 .react {
 	fill: #61dafb;
 }
-.nodeJs {
+.node-js {
 	fill: #339933;
 }
 .redux {
 	fill: #764abc;
 }
 .express {
-	fill: #000000;
+	fill: #339933;
 }
 .react-router {
 	fill: #ca4245;
 }
-.jwt {
-	fill: #000000;
+.webpack {
+	fill: #8dd6f9;
 }
 .html {
 	fill: #e34f26;
@@ -169,6 +187,15 @@
 }
 .figma {
 	fill: #f24e1e;
+}
+
+.bgc-white {
+	box-shadow: 0 0 1rem #fff, 0 0 2rem #fff, 0 0 4rem #fff;
+	background-color: #fff;
+}
+.bgc-black {
+	box-shadow: 0 0 1rem #000, 0 0 2rem #000, 0 0 4rem #000;
+	background-color: #000;
 }
 
 @keyframes circle-rotation {
