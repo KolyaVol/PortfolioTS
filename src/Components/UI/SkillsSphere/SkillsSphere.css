@@ -4,11 +4,29 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	width: max-content;
-	height: max-content;
-	margin: 25rem;
+	width: 100%;
+	height: var(--size);
+	margin: 25rem 0;
 	transform-style: preserve-3d;
 	animation: block-float 12s linear infinite;
+}
+
+.skills-sphere_crushed {
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: var(--size);
+	margin: 25rem 0;
+	transform-style: preserve-3d;
+	animation: destroy 1.8s linear forwards;
+}
+
+.skills-sphere__core {
+	position: absolute;
+	z-index: 100;
+	transform: translateZ(100rem);
 }
 
 .skills-sphere__first-circle,
@@ -22,31 +40,57 @@
 	width: var(--size);
 	height: var(--size);
 	transform-style: preserve-3d;
+	
+}
+
+.skills-sphere__first-circle_crushed,
+.skills-sphere__second-circle_crushed {
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-evenly;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(7, 1fr);
+	grid-template-areas: none;
+	width: calc(var(--size)/8);
+	height: var(--size);
+	
+}
+
+.skills-sphere__first-circle_crushed {
+	animation: destr-block1 1s ease-out forwards 1s;
+}
+
+.skills-sphere__second-circle_crushed {
+	animation: destr-block2 1s ease-out forwards 1s;
 }
 
 .skills-sphere__first-circle {
 	--start-angle: 0deg;
 	--finish-angle: 360deg;
 	grid-template-areas:
-		". . fcfi . ."
-		". fcsi . fcti ."
-		"fcfoi . . . fcfii"
-		". fcsii . fcsei ."
+		". . js . ."
+		". react . node-js ."
+		"redux . . . express"
+		". react-router . webpack ."
 		". . . . .";
 	animation: circle-rotation 12s linear infinite;
 	animation-play-state: running;
+	
 }
 
 .skills-sphere__item {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: 5rem;
-	height: 5rem;
+	width: calc(var(--size)/8);
+	height: calc(var(--size)/8);
 	border-radius: 1rem;
 	cursor: pointer;
 	animation: item-rotation 12s linear infinite;
 	animation-play-state: running;
+	transition: all 1s;
 }
 
 .skills-sphere__descr {
@@ -58,6 +102,7 @@
 	border-radius: 40%;
 	visibility: hidden;
 	z-index: 20;
+	transition: all 2s;
 }
 
 .skills-sphere__item:hover p {
@@ -78,26 +123,26 @@
 	--angle5: -360deg;
 }
 
-.skills-sphere__first-circle > .skills-sphere__item:nth-child(1) {
-	grid-area: fcfi;
+.js {
+	grid-area: js;
 }
-.skills-sphere__first-circle > .skills-sphere__item:nth-child(2) {
-	grid-area: fcsi;
+.react {
+	grid-area: react;
 }
-.skills-sphere__first-circle > .skills-sphere__item:nth-child(3) {
-	grid-area: fcti;
+.node-js {
+	grid-area: node-js;
 }
-.skills-sphere__first-circle > .skills-sphere__item:nth-child(4) {
-	grid-area: fcfoi;
+.redux {
+	grid-area: redux;
 }
-.skills-sphere__first-circle > .skills-sphere__item:nth-child(5) {
-	grid-area: fcfii;
+.express {
+	grid-area: express;
 }
-.skills-sphere__first-circle > .skills-sphere__item:nth-child(6) {
-	grid-area: fcsii;
+.react-router {
+	grid-area: react-router;
 }
-.skills-sphere__first-circle > .skills-sphere__item:nth-child(7) {
-	grid-area: fcsei;
+.webpack {
+	grid-area: webpack;
 }
 
 .skills-sphere__second-circle {
@@ -105,10 +150,10 @@
 	--finish-angle: 450deg;
 	grid-template-areas:
 		". . . . ."
-		". scfi . scsi ."
-		"scti . skills-sphere__photo . scfoi"
-		". scfii . scsii ."
-		". . scsei . .";
+		". html . photoshop ."
+		"css . . . git"
+		". sass . figma ."
+		". . ts . .";
 	animation: circle-rotation 12s linear infinite;
 }
 
@@ -120,30 +165,26 @@
 	--angle5: -450deg;
 }
 
-.skills-sphere__second-circle > .skills-sphere__item:nth-child(1) {
-	grid-area: scfi;
+.html {
+	grid-area: html;
 }
-.skills-sphere__second-circle > .skills-sphere__item:nth-child(2) {
-	grid-area: scsi;
+.photoshop {
+	grid-area: photoshop;
 }
-.skills-sphere__second-circle > .skills-sphere__item:nth-child(3) {
-	grid-area: scti;
+.css {
+	grid-area: css;
 }
-.skills-sphere__second-circle > .skills-sphere__item:nth-child(4) {
-	grid-area: scfoi;
+.git {
+	grid-area: git;
 }
-.skills-sphere__second-circle > .skills-sphere__item:nth-child(5) {
-	grid-area: scfii;
+.sass {
+	grid-area: sass;
 }
-.skills-sphere__second-circle > .skills-sphere__item:nth-child(6) {
-	grid-area: scsii;
+.figma {
+	grid-area: figma;
 }
-.skills-sphere__second-circle > .skills-sphere__item:nth-child(7) {
-	grid-area: scsei;
-}
-
-.paused {
-	animation-play-state: paused;
+.ts {
+	grid-area: ts;
 }
 
 .js {
@@ -258,5 +299,41 @@
 	}
 	100% {
 		transform: rotatey(var(--angle5));
+	}
+}
+
+@keyframes destroy {
+	0% {
+		--size: 0rem
+	}
+	100% {
+		--size: 40rem
+	}
+}
+@keyframes destroy1 {
+	0% {
+		--size: 0rem
+	}
+	100% {
+		--size: 40rem
+	}
+}
+
+@keyframes destr-block1 {
+	0% {
+		
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-800%);
+	}
+}
+@keyframes destr-block2 {
+	0% {
+		transform: translateX(0);	
+		
+	}
+	100% {
+		transform: translateX(800%);
 	}
 }

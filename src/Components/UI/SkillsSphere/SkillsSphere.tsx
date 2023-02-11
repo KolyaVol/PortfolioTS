@@ -1,15 +1,32 @@
+import { useState } from "react";
 import { useAppSelector } from "../../../hooks/redux";
 import "./SkillsSphere.css";
 export default function SkillsSphere() {
 	const darkTheme = useAppSelector((state) => state.switcherReducer.isDark);
+	const [crushed, setCrushed] = useState(false);
+ 
 	let descrClasses;
 	darkTheme
-	? (descrClasses = "skills-sphere__descr bgc-black"):
-	 (descrClasses = "skills-sphere__descr bgc-white");
+		? (descrClasses = "skills-sphere__descr bgc-black")
+		: (descrClasses = "skills-sphere__descr bgc-white");
+
+	let skillsFirstCrush;
+	let skillsSecondCrush;
+	let skillsSphereCrush;
+	if (crushed) {
+		skillsFirstCrush = "skills-sphere__first-circle_crushed";
+		skillsSecondCrush = "skills-sphere__second-circle_crushed";
+		skillsSphereCrush = "skills-sphere_crushed";
+	} else {
+		skillsFirstCrush = "skills-sphere__first-circle";
+		skillsSecondCrush = "skills-sphere__second-circle";
+		skillsSphereCrush = "skills-sphere";
+	}
+
 
 	return (
-		<section className="skills-sphere">
-			<section className="skills-sphere__first-circle">
+		<section className={skillsSphereCrush}>
+			<section className={skillsFirstCrush}>
 				<div className="skills-sphere__item js">
 					<p className={descrClasses}>JavaScript</p>
 					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -56,7 +73,7 @@ export default function SkillsSphere() {
 					</svg>
 				</div>
 			</section>
-			<section className="skills-sphere__second-circle">
+			<section className={skillsSecondCrush}>
 				<div className="skills-sphere__item html">
 					<p className={descrClasses}>HTML5</p>
 					<svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
@@ -100,6 +117,9 @@ export default function SkillsSphere() {
 					</svg>
 				</div>
 			</section>
+			<div onClick={() => setCrushed(!crushed)} className="skills-sphere__core">
+				Hello
+			</div>
 		</section>
 	);
 }
