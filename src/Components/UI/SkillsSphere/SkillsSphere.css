@@ -9,9 +9,11 @@
 	margin: 25rem 0;
 	transform-style: preserve-3d;
 	animation: block-float 12s linear infinite;
+	transition: opacity 0.25s;
 }
 
 .skills-sphere_crushed {
+	--size: 40rem;
 	position: relative;
 	display: flex;
 	justify-content: center;
@@ -20,13 +22,14 @@
 	height: var(--size);
 	margin: 25rem 0;
 	transform-style: preserve-3d;
-	animation: destroy 1.8s linear forwards;
+	transition: opacity 0.25s;
 }
 
 .skills-sphere__core {
 	position: absolute;
 	z-index: 100;
 	transform: translateZ(100rem);
+	cursor: pointer;
 }
 
 .skills-sphere__first-circle,
@@ -40,7 +43,7 @@
 	width: var(--size);
 	height: var(--size);
 	transform-style: preserve-3d;
-	
+	transition: opacity 0.25s;
 }
 
 .skills-sphere__first-circle_crushed,
@@ -50,20 +53,20 @@
 	flex-direction: column;
 	align-items: center;
 	justify-content: space-evenly;
-	grid-template-columns: 1fr;
-	grid-template-rows: repeat(7, 1fr);
-	grid-template-areas: none;
+	gap: 4rem;
 	width: calc(var(--size)/8);
-	height: var(--size);
+	min-height: var(--size);
+	max-height: max-content;
+	transition: opacity 0.25s;
 	
 }
 
 .skills-sphere__first-circle_crushed {
-	animation: destr-block1 1s ease-out forwards 1s;
+	transform: translateX(-30vw);
 }
 
 .skills-sphere__second-circle_crushed {
-	animation: destr-block2 1s ease-out forwards 1s;
+	transform: translateX(30vw);
 }
 
 .skills-sphere__first-circle {
@@ -77,7 +80,6 @@
 		". . . . .";
 	animation: circle-rotation 12s linear infinite;
 	animation-play-state: running;
-	
 }
 
 .skills-sphere__item {
@@ -93,6 +95,19 @@
 	transition: all 1s;
 }
 
+.skills-sphere__item_crushed {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: calc(var(--size)/8);
+	height: calc(var(--size)/8);
+	border-radius: 1rem;
+	cursor: pointer;
+	animation: item-rotation 12s linear infinite;
+	animation-play-state: paused;
+	transition: all 1s;
+}
+
 .skills-sphere__descr {
 	position: absolute;
 	width: max-content;
@@ -101,8 +116,24 @@
 	padding: 1.5rem;
 	border-radius: 40%;
 	visibility: hidden;
-	z-index: 20;
-	transition: all 2s;
+	z-index: 10;
+}
+
+.skills-sphere__descr_crushed {
+	position: absolute;
+	width: max-content;
+	max-width: 20vw;
+	height: max-content;
+	padding: 1.5rem;
+	border-radius: 40%;
+}
+
+.skills-sphere__descr_left {
+	left: 6rem;
+	text-align: justify;
+}
+.skills-sphere__descr_right {
+	left: -30rem;
 }
 
 .skills-sphere__item:hover p {
@@ -302,38 +333,4 @@
 	}
 }
 
-@keyframes destroy {
-	0% {
-		--size: 0rem
-	}
-	100% {
-		--size: 40rem
-	}
-}
-@keyframes destroy1 {
-	0% {
-		--size: 0rem
-	}
-	100% {
-		--size: 40rem
-	}
-}
 
-@keyframes destr-block1 {
-	0% {
-		
-		transform: translateX(0);
-	}
-	100% {
-		transform: translateX(-800%);
-	}
-}
-@keyframes destr-block2 {
-	0% {
-		transform: translateX(0);	
-		
-	}
-	100% {
-		transform: translateX(800%);
-	}
-}

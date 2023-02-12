@@ -47,12 +47,10 @@ export default function Header() {
 				item.classList.add("transparent");
 			});
 			setTimeout(() => {
+				dispatch(toEnLang());
 				words.map((item) => {
 					item.classList.remove("transparent");
 				});
-			}, 500);
-			setTimeout(() => {
-				dispatch(toEnLang());
 			}, 500);
 			localStorage.removeItem("lang");
 		} else {
@@ -61,12 +59,10 @@ export default function Header() {
 				item.classList.add("transparent");
 			});
 			setTimeout(() => {
+				dispatch(toRuLang());
 				words.map((item) => {
 					item.classList.remove("transparent");
 				});
-			}, 500);
-			setTimeout(() => {
-				dispatch(toRuLang());
 			}, 500);
 			localStorage.setItem("lang", "ru");
 		}
