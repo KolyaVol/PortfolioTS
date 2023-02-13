@@ -5,7 +5,6 @@
 	justify-content: center;
 	align-items: center;
 	width: 100%;
-	height: var(--size);
 	margin: 25rem 0;
 	transform-style: preserve-3d;
 	animation: block-float 12s linear infinite;
@@ -27,9 +26,11 @@
 
 .skills-sphere__core {
 	position: absolute;
-	z-index: 100;
-	transform: translateZ(100rem);
+	width: calc(var(--size) / 8);
+	fill: #1572b6;
 	cursor: pointer;
+	z-index: 1;
+	animation: core-move 2s infinite;
 }
 
 .skills-sphere__first-circle,
@@ -54,11 +55,10 @@
 	align-items: center;
 	justify-content: space-evenly;
 	gap: 4rem;
-	width: calc(var(--size)/8);
+	width: calc(var(--size) / 8);
 	min-height: var(--size);
 	max-height: max-content;
 	transition: opacity 0.25s;
-	
 }
 
 .skills-sphere__first-circle_crushed {
@@ -86,8 +86,8 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: calc(var(--size)/8);
-	height: calc(var(--size)/8);
+	width: calc(var(--size) / 8);
+	height: calc(var(--size) / 8);
 	border-radius: 1rem;
 	cursor: pointer;
 	animation: item-rotation 12s linear infinite;
@@ -95,12 +95,16 @@
 	transition: all 1s;
 }
 
+.skills-sphere__item:hover p {
+	visibility: visible;
+}
+
 .skills-sphere__item_crushed {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	width: calc(var(--size)/8);
-	height: calc(var(--size)/8);
+	width: calc(var(--size) / 8);
+	height: calc(var(--size) / 8);
 	border-radius: 1rem;
 	cursor: pointer;
 	animation: item-rotation 12s linear infinite;
@@ -130,14 +134,9 @@
 
 .skills-sphere__descr_left {
 	left: 6rem;
-	text-align: justify;
 }
 .skills-sphere__descr_right {
 	left: -30rem;
-}
-
-.skills-sphere__item:hover p {
-	visibility: visible;
 }
 
 .skills-sphere:hover .skills-sphere__item,
@@ -333,4 +332,21 @@
 	}
 }
 
+@keyframes core-move {
+	0% {
+		transform: translateY(0) translateZ(5rem) rotateZ(0);
+	}
+	50% {
+		transform: translateY(-0.5rem) translateZ(5rem) rotateZ(0);
+	}
+	53% {
+		transform: translateY(-0.5rem) translateZ(5rem) rotateZ(5deg);
+	}
 
+	57% {
+		transform: translateY(-0.5rem) translateZ(5rem) rotateZ(-5deg);
+	}
+	100% {
+		transform: translateY(0) translateZ(5rem) rotateZ(0);
+	}
+}
