@@ -1,8 +1,20 @@
-.aboutMe {
+.about-me {
     grid-area: aboutMe;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-.description {
+.about-me__description {
     width: 40%;
     margin: 0 auto;
+    width: 33%;
+    text-align: justify;
+}
+
+.about-me__left-photo, .about-me__right-photo{
+    position: relative;
+    width: 33%;
+    height: 100%;
+    background-color: aqua;
 }

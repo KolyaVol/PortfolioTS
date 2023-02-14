@@ -4,8 +4,10 @@ import "./AboutMe.css";
 export default function AboutMe() {
 	const lang = useAppSelector(state=>state.langReducer.lang)
 	return (
-		<main className="aboutMe">
-			<p className="description words">{lang.myStory}</p>
+		<main className="about-me">
+			<div className="about-me__left-photo"></div>
+			<p className="about-me__description words">{lang.myStory}</p>
+			<div className="about-me__right-photo"></div>
 		</main>
 	);
 }
