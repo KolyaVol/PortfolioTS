@@ -92,7 +92,11 @@ export default function Header() {
 			</nav>
 
 			<figure className="header__figure">
-				<img className="header__img" src="" alt="look at me" />
+				<img
+					className="header__img"
+					src="../images/myPhoto.jpg"
+					alt="look at me"
+				/>
 				<figcaption className="header__figcaption words">
 					<h2>{lang.hello}</h2>
 					<h1>
