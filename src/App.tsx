@@ -10,18 +10,7 @@ import "./App.css";
 
 function App() {
 	
-	const { isDark } = useAppSelector((state) => state.switcherReducer);
-	
-	
 
-	useEffect(() => {
-		isDark
-			? document.body.classList.add("dark")
-			: document.body.classList.remove("dark");
-	}, [isDark]);
-
-	
-	
 
 	return (
 		<BrowserRouter>

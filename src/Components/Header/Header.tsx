@@ -8,22 +8,25 @@ import "./Header.css";
 export default function Header() {
 	const dispatch = useAppDispatch();
 	const { isDark, isRus } = useAppSelector((state) => state.switcherReducer);
-	const { toLightTheme, toDarkTheme, toRu, toEn } =
-		switcherSlice.actions;
+	const { toLightTheme, toDarkTheme, toRu, toEn } = switcherSlice.actions;
+
+	useEffect(() => {
+		isDark
+			? document.body.classList.add("dark")
+			: document.body.classList.remove("dark");
+	}, [isDark]);
 
 	const lang = useAppSelector((state) => state.langReducer.lang);
 	const { toRuLang, toEnLang } = langSlice.actions;
 
-	const words = Array.from(document.querySelectorAll('.words'))
-	
+	const words = Array.from(document.querySelectorAll(".words"));
+
 	useEffect(() => {
 		localStorage.getItem("theme")
 			? dispatch(toDarkTheme())
 			: dispatch(toLightTheme());
 
-		localStorage.getItem("lang")
-			? dispatch(toRu()) 
-			: dispatch(toEn());
+		localStorage.getItem("lang") ? dispatch(toRu()) : dispatch(toEn());
 	});
 
 	useEffect(() => {

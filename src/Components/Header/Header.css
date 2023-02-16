@@ -57,14 +57,17 @@ li {
 	grid-area: figure;
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	grid-template-areas: "hf hi";
+	column-gap: 4rem;
+	grid-template-areas: "header-greatings header-image";
 	margin: 10vh 0;
 }
 
 .header__img {
-	grid-area: hi;
+	grid-area: header-image;
+	border-radius: 2rem;
+	width: 100%;
 }
 
 .header__figcaption {
-	grid-area: hf;
+	grid-area: header-greatings;
 }
