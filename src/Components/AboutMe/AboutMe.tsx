@@ -4,20 +4,22 @@ import "./AboutMe.css";
 
 export default function AboutMe() {
 	const lang = useAppSelector((state) => state.langReducer.lang);
-	const  [leftMousePos, setLeftMousePos]  = useState({x: -1, y:-1})
+	const [leftMousePos, setLeftMousePos] = useState({ x: -1, y: -1 });
 	const screenWidth = window.screen.width;
 	const screenHeight = window.screen.height;
 	function watchMouseMove(e: any) {
 		setLeftMousePos({
-			x: e.pageX - 0.28 * screenWidth,
-			y: e.pageY - 1.255* screenHeight,
+			x: e.pageX - 0.24 * screenWidth,
+			y: e.pageY - 0.95 * screenHeight,
 		});
-		console.log(leftMousePos);
 	}
 
 	return (
 		<main className="about-me">
-			<div onMouseMove={(e) => watchMouseMove(e)} className="about-me__left-photo">
+			<div
+				onMouseMove={(e) => watchMouseMove(e)}
+				className="about-me__left-photo"
+			>
 				<img
 					style={{
 						WebkitMaskPosition: `${leftMousePos.x}px ${leftMousePos.y}px`,

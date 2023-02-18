@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "../../hooks/redux";
 import { switcherSlice } from "../../store/reducers/SwitcherSlice";
 import { langSlice } from "../../store/reducers/LangSlice";
@@ -7,6 +7,7 @@ import "./Header.css";
 
 export default function Header() {
 	const dispatch = useAppDispatch();
+	const [clientXY, setClientXY] = useState({ x: -1, y: -1 });
 	const { isDark, isRus } = useAppSelector((state) => state.switcherReducer);
 	const { toLightTheme, toDarkTheme, toRu, toEn } = switcherSlice.actions;
 
@@ -71,6 +72,10 @@ export default function Header() {
 		}
 	};
 
+	const mouseMoveHandler = (e: any) => {
+		setClientXY({ x: (e.pageX * 0.8) / 8, y: (e.pageY * 0.8) / 8 });
+	};
+	
 	return (
 		<header>
 			<nav>
@@ -94,11 +99,15 @@ export default function Header() {
 				</ul>
 			</nav>
 
-			<figure className="header__figure">
+			<figure
+				className="header__figure"
+				onMouseMove={(e) => mouseMoveHandler(e)}
+			>
 				<img
 					className="header__img"
 					src="../images/myPhoto.jpg"
 					alt="look at me"
+					style={{ transform: `translate(${clientXY.x}px, ${clientXY.y}px)` }}
 				/>
 				<figcaption className="header__figcaption words">
 					<h2>{lang.hello}</h2>
