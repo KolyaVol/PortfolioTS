@@ -7,9 +7,6 @@ import Contacts from "./Components/Footer/Contacts";
 import "./App.css";
 
 function App() {
-	
-
-
 	return (
 		<BrowserRouter>
 			<div className="app">
@@ -17,7 +14,7 @@ function App() {
 				<AboutMe />
 				<MySkills />
 				<ProjectList />
-				<Contacts/>
+				<Contacts />
 			</div>
 		</BrowserRouter>
 	);

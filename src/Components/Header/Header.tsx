@@ -75,13 +75,20 @@ export default function Header() {
 	const mouseMoveHandler = (e: any) => {
 		setClientXY({ x: (e.pageX * 0.8) / 8, y: (e.pageY * 0.8) / 8 });
 	};
-	
+	const mouseLeaveHandler = () => {
+		setTimeout(() => {
+			setClientXY({ x: 0, y: 0 });
+		}, 1000);
+	}
+
 	return (
 		<header>
 			<nav>
 				<ul className="nav__list">
 					<li className="logo words">LOGO</li>
-					<li className="words">{lang.aboutMe}</li>
+					<li className="words">
+						<a href="#about-me">{lang.aboutMe}</a>
+					</li>
 					<li className="words">{lang.myProjects}</li>
 					<li className="words">{lang.contacts}</li>
 					<li className="swithces">
@@ -99,14 +106,13 @@ export default function Header() {
 				</ul>
 			</nav>
 
-			<figure
-				className="header__figure"
-				onMouseMove={(e) => mouseMoveHandler(e)}
-			>
+			<figure className="header__figure">
 				<img
 					className="header__img"
 					src="../images/myPhoto.jpg"
 					alt="look at me"
+					onMouseMove={(e) => mouseMoveHandler(e)}
+					onMouseLeave={() => {mouseLeaveHandler()}}
 					style={{ transform: `translate(${clientXY.x}px, ${clientXY.y}px)` }}
 				/>
 				<figcaption className="header__figcaption words">

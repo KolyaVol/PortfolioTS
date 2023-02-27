@@ -48,6 +48,18 @@ h2 {
     transition: opacity 0.25s;
 }
 
+a {
+    color: black;
+    transition: all 1s;
+    text-decoration: none;
+}
+
+.dark a{
+    color: azure;
+    transition: all 1s;
+    text-shadow: 0 0 1em rgb(245, 245, 247), 0 0 0.2em rgb(226, 226, 233);
+}
+
 .transparent {
     opacity: 0;
     transition: opacity 0.25s;
