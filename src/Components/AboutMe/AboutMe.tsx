@@ -29,23 +29,22 @@ export default function AboutMe() {
 	}
 
 	return (
-		<main className="about-me" id="about-me">
+		<section className="about-me" id="about-me">
 			<div
 				onMouseMove={(e) => watchMouseMove(e)}
-				className="about-me__left-photo"
+				className="about-me__photo"
 			>
 				<img
 					style={{
 						WebkitMaskPosition: `${leftMousePos.x}px ${leftMousePos.y}px`,
 						
 					}}
-					onClick={(e) => console.log(e)}
-					className="about-me__left-mask"
+					className="about-me__mask"
 					src="../images/homeImg.png"
 					alt="look at me"
 				/>
 			</div>
 			<p className="about-me__description words">{lang.myStory}</p>
-		</main>
+		</section>
 	);
 }

@@ -1,33 +1,43 @@
 .about-me {
-    grid-area: aboutMe;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    gap: 8rem;
+	grid-area: aboutMe;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	gap: 8rem;
 }
 
 .about-me__description {
-    margin: 0 auto;
-    width: 50%;
-    text-align: justify;
+	margin: 0 auto;
+	width: 50%;
+	text-align: justify;
 }
 
-.about-me__left-photo, .about-me__right-photo{
-    position: relative;
-    width: 50%;
-    height: 100%;
-    border-radius: 2rem;
-    background: url('../../../public/images/myPhoto.jpg');
-    background-size: cover;
-    background-repeat: no-repeat;
+.about-me__photo {
+	position: relative;
+	width: 50%;
+	height: 100%;
+	border-radius: 2rem;
+	background: url("../../../public/images/myPhoto.jpg");
+	background-size: cover;
+	background-repeat: no-repeat;
 }
 
-.about-me__left-mask {
-    width: 100%;
-    height: 100%;
-    mask-repeat: no-repeat;
-    mask-image: url('../../../public/images/adobephotoshop.svg') ;
-    mask-size: 200px;
-    mask-position: 10rem 10rem;
-    
+.about-me__mask {
+	width: 100%;
+	height: 100%;
+	mask-repeat: no-repeat;
+	mask-image: url("../../../public/images/adobephotoshop.svg");
+	mask-size: 200px;
+	mask-position: 10rem 10rem;
+}
+
+@media (max-width: 1000px) {
+	.about-me {
+		flex-direction: column;
+	}
+	.about-me__photo,
+	.about-me__description {
+		width: 100%;
+	}
 }

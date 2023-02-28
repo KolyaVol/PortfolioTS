@@ -1,0 +1,43 @@
+.project-list__item:hover,
+.project-list__item.hover {
+	transform: rotateY(180deg);
+}
+
+.project-list__item,
+.project-list__item__front,
+.project-list__item__back {
+	min-width: 16rem;
+	width: 100%;
+	min-height: 22rem;
+	height: 100%;
+	border-radius: 1rem;
+	margin: 0;
+}
+
+.project-list__item {
+	transition: 5s;
+	transform-style: preserve-3d;
+	position: relative;
+	perspective: 1000cm;
+}
+
+.project-list__item__front,
+.project-list__item__back {
+	backface-visibility: hidden;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+.project-list__item__front {
+	background-color: red;
+}
+
+.project-list__item__back {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	transform: rotateY(180deg);
+}

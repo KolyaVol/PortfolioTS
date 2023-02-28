@@ -51,7 +51,7 @@ export default function MySkills() {
 	};
 
 	return (
-		<section className="skills">
+		<main className="skills">
 			<h2>{lang.mySkills}</h2>
 			<section className={`skills-sphere_anim ${skillsSphereCrush}`}>
 				<section className={`skills-sphere_anim ${skillsFirstCrush}`}>
@@ -236,6 +236,6 @@ export default function MySkills() {
 					<path d={skillsCore} />
 				</svg>
 			</section>
-		</section>
+		</main>
 	);
 }

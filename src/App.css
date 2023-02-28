@@ -1,84 +1,81 @@
 html {
-    font-size: 10px;
-    text-shadow: 0 0 1em rgb(124, 124, 160), 0 0 0.2em rgb(141, 141, 165);
+	font-size: 10px;
+	text-shadow: 0 0 1em rgb(124, 124, 160), 0 0 0.2em rgb(141, 141, 165);
 }
 
 body {
-    transition: all 1s;
+	transition: all 1s;
 }
 .app {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: grid;
-    grid-template-columns: 1fr 4fr 1fr;
-    grid-template-rows: 100vh max-content 100vh repeat(2, max-content);
-    grid-template-areas: 
-        
-        '. header .'
-        '. aboutMe . '
-        '. skills .'
-        '. projectList .'
-        '. contacts .'
-        ;
-        
-    width: 100vw;
-    min-height: 100vh;
-    font-size: 2rem;
+	position: absolute;
+	top: 0;
+	left: 0;
+	display: grid;
+	grid-template-columns: 1fr 4fr 1fr;
+	grid-template-rows: minmax(100vh, max-content) repeat(4, max-content);
+	grid-template-areas:
+		". header ."
+		". aboutMe . "
+		". skills ."
+		". projectList ."
+		". contacts .";
+
+	width: 100vw;
+	min-height: 100vh;
+	font-size: 2rem;
 }
 
 h1 {
-    font-size: 6rem;
+	font-size: 6rem;
 }
 
 h2 {
-    font-size: 4rem;
+	font-size: 4rem;
 }
 
 .dark {
-    background-color: black;
-    color: azure;
-    transition: all 1s;
-    text-shadow: 0 0 1em rgb(245, 245, 247), 0 0 0.2em rgb(226, 226, 233);
+	background-color: black;
+	color: azure;
+	transition: all 1s;
+	text-shadow: 0 0 1em rgb(245, 245, 247), 0 0 0.2em rgb(226, 226, 233);
 }
 
 .words {
-    
-    opacity: 1;
-    transition: opacity 0.25s;
+	opacity: 1;
+	transition: opacity 0.25s;
 }
 
 a {
-    color: black;
-    transition: all 1s;
-    text-decoration: none;
+	color: black;
+	transition: all 1s;
+	text-decoration: none;
 }
 
-.dark a{
-    color: azure;
-    transition: all 1s;
-    text-shadow: 0 0 1em rgb(245, 245, 247), 0 0 0.2em rgb(226, 226, 233);
+.dark a {
+	color: azure;
+	transition: all 1s;
+	text-shadow: 0 0 1em rgb(245, 245, 247), 0 0 0.2em rgb(226, 226, 233);
 }
 
 .transparent {
-    opacity: 0;
-    transition: opacity 0.25s;
+	opacity: 0;
+	transition: opacity 0.25s;
 }
 
 @media (min-width: 1800px) {
-    html {
-        font-size: 15px;
-    }
+	html {
+		font-size: 15px;
+	}
 }
 
 @media (min-width: 1450px) {
-    html {
-        font-size: 12px;
-    }
+	html {
+		font-size: 12px;
+	}
 }
 
 @media (min-width: 1350px) {
-    html {
-        font-size: 11px;
-    }
+	html {
+		font-size: 11px;
+	}
 }
