@@ -83,9 +83,12 @@ export default function Header() {
 
 	return (
 		<header>
+			<div className="logo words">LOGO</div>
+			<div className="mobile-burger">
+				<div className="mobile-burger__line"></div>
+			</div>
 			<nav>
 				<ul className="nav__list">
-					<li className="logo words">LOGO</li>
 					<li className="words">
 						<a href="#about-me">{lang.aboutMe}</a>
 					</li>
@@ -112,7 +115,9 @@ export default function Header() {
 					src="../images/myPhoto.jpg"
 					alt="look at me"
 					onMouseMove={(e) => mouseMoveHandler(e)}
-					onMouseLeave={() => {mouseLeaveHandler()}}
+					onMouseLeave={() => {
+						mouseLeaveHandler();
+					}}
 					style={{ transform: `translate(${clientXY.x}px, ${clientXY.y}px)` }}
 				/>
 				<figcaption className="header__figcaption words">

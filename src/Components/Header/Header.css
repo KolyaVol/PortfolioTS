@@ -1,11 +1,11 @@
 header {
 	grid-area: header;
 	display: grid;
-	grid-template-columns: 100%;
+	grid-template-columns: 2fr 8fr;
 	grid-template-rows: 10vh 90vh;
 	grid-template-areas:
-		"nav"
-		"figure";
+		"logo nav"
+		"figure figure";
 	width: 100%;
 	height: 100%;
 }
@@ -14,7 +14,6 @@ nav {
 	grid-area: nav;
 	display: flex;
 	align-items: center;
-	justify-content: center;
 	width: 100%;
 	height: 100%;
 	padding: 0;
@@ -22,7 +21,8 @@ nav {
 
 .nav__list {
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	justify-content: end;
 	justify-items: center;
 	align-items: center;
 	width: 100%;
@@ -41,6 +41,7 @@ li {
 	width: 100%;
 	display: flex;
 	justify-items: start;
+	align-items: center;
 }
 
 .swithces {
@@ -70,4 +71,73 @@ li {
 
 .header__figcaption {
 	grid-area: header-greatings;
+}
+
+.mobile-burger {
+	position: fixed;
+	right: 20vw;
+	top: 5rem;
+}
+
+.mobile-burger__line, .mobile-burger__line::before, .mobile-burger__line::after {
+	width: 4rem;
+	height: 0.5rem;
+	border-radius: 1rem;
+	background-color: var(--tc);
+	margin: 2rem;
+}
+
+.mobile-burger__line::before, .mobile-burger__line::after {
+	content: '';
+	top: 20rem;
+	width: 4rem;
+	height: 0.5rem;
+}
+
+@media (max-width: 750px) {
+
+	header {
+	grid-template-areas:
+		"logo logo"
+		"figure figure";
+	width: 100%;
+	height: 100%;
+}
+
+	nav {
+	width: 100vw;
+	height: 100%;
+	padding: 0;
+}
+	.nav__list {
+		position: fixed;
+		left: 0;
+		top: 00vh;
+		display: grid;
+		grid-template-columns: 1fr;
+		grid-template-rows: repeat(4, max-content);
+		justify-items: center;
+		align-items: center;
+		width: 100vw;
+		height: 120vh;
+		padding-left: 0;
+		background-color: var(--bgc);
+		z-index: 10;
+	}
+
+	li {
+	list-style-type: none;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	cursor: pointer;
+	margin: 5rem 0 0;
+}
+	.swithces {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+}
 }
