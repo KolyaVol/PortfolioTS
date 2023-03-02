@@ -6,10 +6,12 @@ import MyCheckBox from "../UI/MyCheckBox/MyCheckBox";
 import "./Header.css";
 
 export default function Header() {
-	const dispatch = useAppDispatch();
 	const [clientXY, setClientXY] = useState({ x: -1, y: -1 });
+	const [isNavOpen, setIsNavOpen] = useState(false);
+	const dispatch = useAppDispatch();
 	const { isDark, isRus } = useAppSelector((state) => state.switcherReducer);
 	const { toLightTheme, toDarkTheme, toRu, toEn } = switcherSlice.actions;
+	const deviceVidth = window.innerWidth;
 
 	useEffect(() => {
 		isDark
@@ -79,16 +81,28 @@ export default function Header() {
 		setTimeout(() => {
 			setClientXY({ x: 0, y: 0 });
 		}, 1000);
-	}
+	};
 
+	
 	return (
 		<header>
 			<div className="logo words">LOGO</div>
-			<div className="mobile-burger">
+			<div
+				className={isNavOpen ? "mobile-burger" : "mobile-burger__active"}
+				onClick={() => setIsNavOpen(!isNavOpen)}
+			>
 				<div className="mobile-burger__line"></div>
 			</div>
 			<nav>
-				<ul className="nav__list">
+				<ul
+					className={
+						deviceVidth > 750
+							? "nav-list"
+							: isNavOpen
+							? "nav-list__mobile_active"
+							: "nav-list__mobile"
+					}
+				>
 					<li className="words">
 						<a href="#about-me">{lang.aboutMe}</a>
 					</li>
