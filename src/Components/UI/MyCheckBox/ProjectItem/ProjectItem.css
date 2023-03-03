@@ -1,11 +1,10 @@
-.project-list__item:hover,
-.project-list__item.hover {
+.project-list__item.active {
 	transform: rotateY(180deg);
 }
 
 .project-list__item,
-.project-list__item__front,
-.project-list__item__back {
+.project-list__item-front,
+.project-list__item-back {
 	min-width: 16rem;
 	width: 100%;
 	min-height: 22rem;
@@ -15,25 +14,26 @@
 }
 
 .project-list__item {
-	transition: 5s;
+	transition: 2s;
 	transform-style: preserve-3d;
 	position: relative;
 	perspective: 1000cm;
 }
 
-.project-list__item__front,
-.project-list__item__back {
+.project-list__item-front,
+.project-list__item-back {
 	backface-visibility: hidden;
 	position: absolute;
 	top: 0;
 	left: 0;
 }
 
-.project-list__item__front {
+.project-list__item-front {
 	background-color: red;
+	object-fit: cover;
 }
 
-.project-list__item__back {
+.project-list__item-back {
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

@@ -10,8 +10,8 @@ interface LangState {
 	mySurname: string;
 	firstWords: string;
 	myStory: string;
-	mySkills:string
-	
+	mySkills:string;
+	prItemButton: string
 }
 	
 }
@@ -28,6 +28,7 @@ let initialState: LangState = {
 		myStory:
 			"Hello again everyone! A little about myself: I've graduated Belarusian State Technological University in 2021, went through the army and worked as a designer in the chemical industry for one year. I start thinking about programming 2 years ago but start learning right after army. Now I've almost a year of experiance in web-programming and I realy enjoy this profession. What you really need to know about me is that I always reach my goal, and right now that goal is to be a good IT specialist. My hobbies are sport, travelling, computer games and the new one - writting code. By trusting me, you will get maximum return for your project!",
 		mySkills: 'My Skills',
+		prItemButton: 'Watch full'
 	},
 };
 
@@ -48,6 +49,7 @@ export const langSlice = createSlice({
 				myStory:
 					"Hello again everyone! A little about myself: I've graduated Belarusian State Technological University in 2021, went through the army and worked as a designer in the chemical industry for one year. I start thinking about programming 2 years ago but start learning right after army. Now I've almost a year of experiance in web-programming and I realy enjoy this profession. What you really need to know about me is that I always reach my goal, and right now that goal is to be a good IT specialist. My hobbies are sport, travelling, computer games and the new one - writting code. By trusting me, you will get maximum return for your project!",
 				mySkills: "My Skills",
+				prItemButton: "Watch full",
 			};
 		},
 		toRuLang(state) {
@@ -63,6 +65,7 @@ export const langSlice = createSlice({
 				myStory:
 					"Привет снова всем! Немного о себе: в 2021 году закончил БГТУ, прошел армию, год работал конструктором в химической промышленности. Я начал думать о программировании 2 года назад, но начал учиться сразу после армии. Сейчас у меня почти год опыта в веб-программировании и мне очень нравится эта профессия. Что вам действительно нужно знать обо мне, так это то, что я всегда достигаю своей цели, и прямо сейчас эта цель — стать хорошим ИТ-специалистом. Мои увлечения - спорт, путешествия, компьютерные игры и новое - написание кода. Доверившись мне, вы получите максимальную отдачу для своего проекта!",
 				mySkills: "Мои навыки",
+				prItemButton: "Посмотреть",
 			};
 		},
 	},

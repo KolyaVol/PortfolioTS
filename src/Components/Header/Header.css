@@ -10,6 +10,10 @@ header {
 	height: 100%;
 }
 
+.mobile-burger {
+	visibility: hidden;
+}
+
 nav {
 	grid-area: nav;
 	display: flex;
@@ -73,59 +77,6 @@ li {
 	grid-area: header-greatings;
 }
 
-.mobile-burger {
-	position: fixed;
-	display: flex;
-	flex-direction: column;
-	align-items: end;
-	right: 15vw;
-	top: 5rem;
-	z-index: 11;
-}
-.mobile-burger__active {
-	position: fixed;
-	display: flex;
-	flex-direction: column;
-	align-items: end;
-	right: 15vw;
-	top: 5rem;
-	z-index: 11;
-}
-
-.mobile-burger > div,
-.mobile-burger::before,
-.mobile-burger::after {
-	content: "";
-	width: 4rem;
-	height: 0.5rem;
-	border-radius: 1rem;
-	background-color: var(--tc);
-	margin: 0.2rem;
-}
-
-.mobile-burger__active > div,
-.mobile-burger__active::before,
-.mobile-burger__active::after {
-	content: "";
-	width: 4rem;
-	height: 0.5rem;
-	border-radius: 1rem;
-	background-color: var(--tc);
-	margin: 0.2rem;
-}
-
-.mobile-burger > div {
-	opacity: 0;
-}
-
-.mobile-burger::before {
-	transform: translateY(0.9rem) rotate(45deg);
-}
-
-.mobile-burger::after {
-	transform: translateY(-0.9rem) rotate(-45deg);
-}
-
 @media (max-width: 750px) {
 	header {
 		grid-template-areas:
@@ -182,4 +133,56 @@ li {
 		justify-content: center;
 		align-items: center;
 	}
+	.mobile-burger {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	right: 15vw;
+	top: 5rem;
+	z-index: 11;
+}
+.mobile-burger__active {
+	position: fixed;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-end;
+	right: 15vw;
+	top: 5rem;
+	z-index: 11;
+}
+
+.mobile-burger > div,
+.mobile-burger::before,
+.mobile-burger::after {
+	content: "";
+	width: 4rem;
+	height: 0.5rem;
+	border-radius: 1rem;
+	background-color: var(--tc);
+	margin: 0.2rem;
+}
+
+.mobile-burger__active > div,
+.mobile-burger__active::before,
+.mobile-burger__active::after {
+	content: "";
+	width: 4rem;
+	height: 0.5rem;
+	border-radius: 1rem;
+	background-color: var(--tc);
+	margin: 0.2rem;
+}
+
+.mobile-burger > div {
+	opacity: 0;
+}
+
+.mobile-burger::before {
+	transform: translateY(0.9rem) rotate(45deg);
+}
+
+.mobile-burger::after {
+	transform: translateY(-0.9rem) rotate(-45deg);
+}
 }
