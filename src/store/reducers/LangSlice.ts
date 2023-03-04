@@ -3,7 +3,7 @@ interface LangState {
 	lang:
 	{
 	aboutMe: string;
-	myProjects: string;
+	myProjectsTitle: string;
 	contacts: string;
 	hello: string;
 	myName: string;
@@ -18,7 +18,7 @@ interface LangState {
 let initialState: LangState = {
 	lang: {
 		aboutMe: "About me",
-		myProjects: "My projects",
+		myProjectsTitle: "My projects",
 		contacts: "Contacts",
 		hello: "Hello!",
 		myName: `I'm Nikolai`,
@@ -27,8 +27,8 @@ let initialState: LangState = {
 			"I've been doing front-end and some back-end development for a year now. Do you need a responsive website, SPA, or maybe a deploing your app? Then contact me",
 		myStory:
 			"Hello again everyone! A little about myself: I've graduated Belarusian State Technological University in 2021, went through the army and worked as a designer in the chemical industry for one year. I start thinking about programming 2 years ago but start learning right after army. Now I've almost a year of experiance in web-programming and I realy enjoy this profession. What you really need to know about me is that I always reach my goal, and right now that goal is to be a good IT specialist. My hobbies are sport, travelling, computer games and the new one - writting code. By trusting me, you will get maximum return for your project!",
-		mySkills: 'My Skills',
-		prItemButton: 'Watch full'
+		mySkills: "My Skills",
+		prItemButton: "Watch full",
 	},
 };
 
@@ -39,7 +39,7 @@ export const langSlice = createSlice({
 		toEnLang(state) {
 			state.lang = {
 				aboutMe: "About me",
-				myProjects: "My projects",
+				myProjectsTitle: "My projects",
 				contacts: "Contacts",
 				hello: "Hello!",
 				myName: `I'm Nikolai`,
@@ -55,7 +55,7 @@ export const langSlice = createSlice({
 		toRuLang(state) {
 			state.lang = {
 				aboutMe: "Обо мне",
-				myProjects: "Мои проекты",
+				myProjectsTitle: "Мои проекты",
 				contacts: "Контакты",
 				hello: "Привет!",
 				myName: `Меня зовут Николай`,

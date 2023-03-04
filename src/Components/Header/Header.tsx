@@ -106,7 +106,7 @@ export default function Header() {
 					<li className="words">
 						<a href="#about-me">{lang.aboutMe}</a>
 					</li>
-					<li className="words">{lang.myProjects}</li>
+					<li className="words">{lang.myProjectsTitle}</li>
 					<li className="words">{lang.contacts}</li>
 					<li className="swithces">
 						<MyCheckBox

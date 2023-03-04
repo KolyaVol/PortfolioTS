@@ -6,25 +6,36 @@ import "./ProjectItem.css";
 interface PrItemProps {
 	children?: string;
 	src?: string;
-	url?: string | any;
+	url?: string;
 }
 export default function ProjectItem({ children, src, url }: PrItemProps) {
 	const prItemButton = useAppSelector(
 		(state) => state.langReducer.lang.prItemButton
 	);
 	const [projectSpin, setProjectSpin] = useState(false);
+	let checkProjectSpin = false;
+	const mouseEnterHandler = () => {
+		setProjectSpin(true);
+		checkProjectSpin = true;
+		console.log(1);
+	};
+	const mouseLeaveHandler = () => {
+		checkProjectSpin = false;
+		console.log(2);
+
+		setTimeout(() => {
+			if (!checkProjectSpin) setProjectSpin(false);
+			console.log(3);
+		}, 1000);
+	};
+
 	return (
 		<figure
 			className={
 				projectSpin ? "project-list__item active" : "project-list__item "
 			}
-			onMouseEnter={() => setProjectSpin(true)}
-			onMouseLeave={() =>
-				setTimeout(() => {
-					setProjectSpin(false);
-				}, 1000)
-			}
-			
+			onMouseEnter={() => mouseEnterHandler()}
+			onMouseLeave={() => mouseLeaveHandler()}
 		>
 			<img
 				src={src}
@@ -33,9 +44,11 @@ export default function ProjectItem({ children, src, url }: PrItemProps) {
 			></img>
 			<figcaption className="project-list__item-back">
 				<p>{children}</p>
-				<Link to={url} target="_blank">
-					{prItemButton}
-				</Link>
+				<div className="project-list__item-btn">
+					<Link to={url ? url : "#"} target="_blank">
+						{prItemButton}
+					</Link>
+				</div>
 			</figcaption>
 		</figure>
 	);

@@ -18,6 +18,7 @@
 	transform-style: preserve-3d;
 	position: relative;
 	perspective: 1000cm;
+	cursor: pointer;
 }
 
 .project-list__item-front,
@@ -40,4 +41,16 @@
 	align-items: center;
 	text-align: center;
 	transform: rotateY(180deg);
+}
+
+.project-list__item-btn {
+	padding: 1rem;
+	border-radius: 2rem;
+	box-shadow: 0 0 0.5rem .5rem rgba(0, 0, 0, .5) ;
+	background-color: var(--bgc);
+	cursor: pointer;
+}
+
+.project-list__item-btn:hover {
+	background-color: lavender;
 }
