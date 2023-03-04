@@ -1,6 +1,7 @@
 html {
 	font-size: 10px;
 	text-shadow: 0 0 1em rgb(124, 124, 160), 0 0 0.2em rgb(141, 141, 165);
+	scroll-behavior: smooth;
 	--bgc: white;
 	--tc: black;
 }

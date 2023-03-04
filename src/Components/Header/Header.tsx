@@ -83,45 +83,52 @@ export default function Header() {
 		}, 1000);
 	};
 
-	
 	return (
-		<header>
-			<div className="logo words">LOGO</div>
-			<div
-				className={isNavOpen ? "mobile-burger" : "mobile-burger__active"}
-				onClick={() => setIsNavOpen(!isNavOpen)}
-			>
-				<div className="mobile-burger__line"></div>
-			</div>
-			<nav>
-				<ul
-					className={
-						deviceVidth > 750
-							? "nav-list"
-							: isNavOpen
-							? "nav-list__mobile_active"
-							: "nav-list__mobile"
-					}
+		<header id="header">
+			<div className="nav-box">
+				<a href="#header" className="logo words">
+					<img width={'80px'} src="../images/logo.svg" alt="logo" />
+				</a>
+				<div
+					className={isNavOpen ? "mobile-burger" : "mobile-burger__active"}
+					onClick={() => setIsNavOpen(!isNavOpen)}
 				>
-					<li className="words">
-						<a href="#about-me">{lang.aboutMe}</a>
-					</li>
-					<li className="words">{lang.myProjectsTitle}</li>
-					<li className="words">{lang.contacts}</li>
-					<li className="swithces">
-						<MyCheckBox
-							title={isRus ? "Ru" : "En"}
-							state={isRus}
-							handler={langSwitch}
-						/>
-						<MyCheckBox
-							title={isDark ? "Dark" : "Light"}
-							state={isDark}
-							handler={themeSwitch}
-						/>
-					</li>
-				</ul>
-			</nav>
+					<div className="mobile-burger__line"></div>
+				</div>
+				<nav>
+					<ul
+						className={
+							deviceVidth > 750
+								? "nav-list"
+								: isNavOpen
+								? "nav-list__mobile_active"
+								: "nav-list__mobile"
+						}
+					>
+						<li className="words">
+							<a href="#about-me">{lang.aboutMe}</a>
+						</li>
+						<li className="words">
+							<a href="#projects">{lang.myProjectsTitle}</a>
+						</li>
+						<li className="words">
+							<a href="#contacts">{lang.contacts}</a>
+						</li>
+						<li className="swithces">
+							<MyCheckBox
+								title={isRus ? "Ru" : "En"}
+								state={isRus}
+								handler={langSwitch}
+							/>
+							<MyCheckBox
+								title={isDark ? "Dark" : "Light"}
+								state={isDark}
+								handler={themeSwitch}
+							/>
+						</li>
+					</ul>
+				</nav>
+			</div>
 
 			<figure className="header__figure">
 				<img

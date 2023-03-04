@@ -17,15 +17,12 @@ export default function ProjectItem({ children, src, url }: PrItemProps) {
 	const mouseEnterHandler = () => {
 		setProjectSpin(true);
 		checkProjectSpin = true;
-		console.log(1);
 	};
 	const mouseLeaveHandler = () => {
 		checkProjectSpin = false;
-		console.log(2);
 
 		setTimeout(() => {
 			if (!checkProjectSpin) setProjectSpin(false);
-			console.log(3);
 		}, 1000);
 	};
 

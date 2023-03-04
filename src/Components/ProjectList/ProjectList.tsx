@@ -25,7 +25,7 @@ export default function ProjectList() {
 		},
 	];
 	return (
-		<section className="project-list__container">
+		<section className="project-list__container" id="projects">
 			<h2 className="project-list__title">{myProjectsTitle}</h2>
 			<div className="project-list__template">
 				{myProjectsArr.map((item) => (
