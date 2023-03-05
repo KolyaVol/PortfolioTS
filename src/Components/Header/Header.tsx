@@ -87,7 +87,7 @@ export default function Header() {
 		<header id="header">
 			<div className="nav-box">
 				<a href="#header" className="logo words">
-					<img width={'80px'} src="../images/logo.svg" alt="logo" />
+					<img src="../images/logo.svg" alt="logo" />
 				</a>
 				<div
 					className={isNavOpen ? "mobile-burger" : "mobile-burger__active"}
