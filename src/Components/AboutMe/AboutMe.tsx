@@ -44,7 +44,7 @@ export default function AboutMe() {
 					alt="look at me"
 				/>
 			</div>
-			<p className="about-me__description words">{lang.myStory}</p>
+			<p className="about-me__description words">{lang.myStory} </p>
 		</section>
 	);
 }

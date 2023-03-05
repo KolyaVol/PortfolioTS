@@ -106,7 +106,7 @@ export default function Header() {
 						}
 					>
 						<li className="words">
-							<a href="#about-me">{lang.aboutMe}</a>
+							<a href="#skills">{lang.mySkills}</a>
 						</li>
 						<li className="words">
 							<a href="#projects">{lang.myProjectsTitle}</a>

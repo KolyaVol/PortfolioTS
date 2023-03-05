@@ -2,7 +2,6 @@ import { createSlice } from "@reduxjs/toolkit";
 interface LangState { 
 	lang:
 	{
-	aboutMe: string;
 	myProjectsTitle: string;
 	contacts: string;
 	hello: string;
@@ -17,7 +16,6 @@ interface LangState {
 }
 let initialState: LangState = {
 	lang: {
-		aboutMe: "About me",
 		myProjectsTitle: "My projects",
 		contacts: "Contacts",
 		hello: "Hello!",
@@ -38,7 +36,6 @@ export const langSlice = createSlice({
 	reducers: {
 		toEnLang(state) {
 			state.lang = {
-				aboutMe: "About me",
 				myProjectsTitle: "My projects",
 				contacts: "Contacts",
 				hello: "Hello!",
@@ -54,7 +51,6 @@ export const langSlice = createSlice({
 		},
 		toRuLang(state) {
 			state.lang = {
-				aboutMe: "Обо мне",
 				myProjectsTitle: "Мои проекты",
 				contacts: "Контакты",
 				hello: "Привет!",

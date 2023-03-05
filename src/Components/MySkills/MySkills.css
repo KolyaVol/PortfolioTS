@@ -4,6 +4,7 @@
 	flex-direction: column;
 	align-items: center;
 	margin-top: 5rem;
+	width: 100%;
 }
 
 .skills-sphere {
@@ -19,28 +20,6 @@
 	transition: opacity 0.25s;
 }
 
-.skills-sphere_crushed {
-	--size: 40rem;
-	position: relative;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	width: 100%;
-	height: var(--size);
-	margin: 25rem 0;
-	transform-style: preserve-3d;
-	transition: opacity 0.25s;
-}
-
-.skills-sphere__core {
-	position: absolute;
-	width: calc(var(--size) / 8);
-	fill: #1572b6;
-	cursor: pointer;
-	z-index: 1;
-	animation: core-move 2s infinite;
-}
-
 .skills-sphere__first-circle,
 .skills-sphere__second-circle {
 	position: absolute;
@@ -53,28 +32,6 @@
 	height: var(--size);
 	transform-style: preserve-3d;
 	transition: opacity 0.25s;
-}
-
-.skills-sphere__first-circle_crushed,
-.skills-sphere__second-circle_crushed {
-	position: absolute;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-evenly;
-	gap: 4rem;
-	width: calc(var(--size) / 8);
-	min-height: var(--size);
-	max-height: max-content;
-	transition: opacity 0.25s;
-}
-
-.skills-sphere__first-circle_crushed {
-	transform: translateX(-30vw);
-}
-
-.skills-sphere__second-circle_crushed {
-	transform: translateX(30vw);
 }
 
 .skills-sphere__first-circle {
@@ -107,19 +64,6 @@
 	visibility: visible;
 }
 
-.skills-sphere__item_crushed {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	width: calc(var(--size) / 8);
-	height: calc(var(--size) / 8);
-	border-radius: 1rem;
-	cursor: pointer;
-	animation: item-rotation 12s linear infinite;
-	animation-play-state: paused;
-	transition: all 1s;
-}
-
 .skills-sphere__descr {
 	position: absolute;
 	width: max-content;
@@ -129,22 +73,6 @@
 	border-radius: 40%;
 	visibility: hidden;
 	z-index: 10;
-}
-
-.skills-sphere__descr_crushed {
-	position: absolute;
-	width: max-content;
-	max-width: 20vw;
-	height: max-content;
-	padding: 1.5rem;
-	border-radius: 40%;
-}
-
-.skills-sphere__descr_left {
-	left: 6rem;
-}
-.skills-sphere__descr_right {
-	left: -30rem;
 }
 
 .skills-sphere:hover .skills-sphere__item,
@@ -201,6 +129,75 @@
 	--angle3: -270deg;
 	--angle4: -360deg;
 	--angle5: -450deg;
+}
+
+.skills-sphere_crushed {
+	--size: 40rem;
+	position: relative;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	height: max-content;
+}
+
+.skills-sphere__first-circle_crushed,
+.skills-sphere__second-circle_crushed {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	width: 50%;
+	gap: 4rem;
+	transition: opacity 0.25s;
+}
+
+.skills-sphere__first-circle_crushed {
+	align-items: flex-start;
+}
+
+.skills-sphere__second-circle_crushed {
+	align-items: flex-end;
+}
+
+.skills-sphere__first-circle_crushed  .skills-sphere__item_crushed {
+	justify-content: flex-start;
+}
+.skills-sphere__second-circle_crushed  .skills-sphere__item_crushed {
+	justify-content: flex-end;
+}
+
+.skills-sphere__item_crushed {
+	display: flex;
+	align-items: center;
+	gap: 2rem;
+	width: 100%;
+	height: calc(var(--size) / 8);
+	border-radius: 1rem;
+	cursor: pointer;
+}
+
+.skills-sphere__item_crushed > svg {
+	width: calc(var(--size) / 8);
+
+}
+
+.skills-sphere__descr_crushed {
+	position: relative;
+	width: max-content;
+	max-width: 20vw;
+	padding: 1.5rem;
+	border-radius: 40%;
+}
+
+.skills-sphere__core {
+	position: absolute;
+	top: calc(50% - calc(var(--size) / 16));
+	left: calc(50% - calc(var(--size) / 16));
+	width: calc(var(--size) / 8);
+	fill: #1572b6;
+	cursor: pointer;
+	z-index: 1;
+	animation: core-move 2s infinite;
 }
 
 .html {
@@ -360,13 +357,13 @@
 }
 
 @media (max-width: 500px) {
-	.skills-sphere {
+	.skills-sphere, .skills-sphere_crushed {
 		--size: 20rem;
 		margin: 10rem 0;
 	}
 }
 @media (max-width: 900px) and (min-width: 501px) {
-	.skills-sphere {
+	.skills-sphere, .skills-sphere_crushed {
 		--size: 30rem;
 	}
 }
