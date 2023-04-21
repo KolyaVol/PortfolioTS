@@ -49,26 +49,18 @@ export default function Header() {
 	const langSwitch = () => {
 		if (isRus) {
 			dispatch(toEn());
-			words.map((item) => {
-				item.classList.add("transparent");
-			});
+			words.map((item) => item.classList.add("transparent"));
 			setTimeout(() => {
 				dispatch(toEnLang());
-				words.map((item) => {
-					item.classList.remove("transparent");
-				});
+				words.map((item) => item.classList.remove("transparent"));
 			}, 500);
 			localStorage.removeItem("lang");
 		} else {
 			dispatch(toRu());
-			words.map((item) => {
-				item.classList.add("transparent");
-			});
+			words.map((item) => item.classList.add("transparent"));
 			setTimeout(() => {
 				dispatch(toRuLang());
-				words.map((item) => {
-					item.classList.remove("transparent");
-				});
+				words.map((item) => item.classList.remove("transparent"));
 			}, 500);
 			localStorage.setItem("lang", "ru");
 		}

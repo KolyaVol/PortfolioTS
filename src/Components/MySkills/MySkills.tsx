@@ -42,14 +42,10 @@ export default function MySkills() {
 	);
 
 	const skillSwitch = () => {
-		skillsAnim.map((item) => {
-			item.classList.add("transparent");
-		});
+		skillsAnim.map((item) => item.classList.add("transparent"));
 		setTimeout(() => {
 			setCrushed(!crushed);
-			skillsAnim.map((item) => {
-				item.classList.remove("transparent");
-			});
+			skillsAnim.map((item) => item.classList.remove("transparent"));
 		}, 500);
 	};
 

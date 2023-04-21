@@ -3,13 +3,8 @@ import ProjectItem from "../UI/MyCheckBox/ProjectItem/ProjectItem";
 import "./ProjectList.css";
 
 export default function ProjectList() {
-	const {
-		myProjectsTitle,
-		prItemButton,
-		dataMolaDescr,
-		itlogyDescr,
-		webshopDescr,
-	} = useAppSelector((state) => state.langReducer.lang);
+	const { myProjectsTitle, dataMolaDescr, itlogyDescr, webshopDescr } =
+		useAppSelector((state) => state.langReducer.lang);
 	const myProjectsArr = [
 		{
 			description: dataMolaDescr,
