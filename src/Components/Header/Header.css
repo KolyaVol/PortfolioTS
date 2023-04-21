@@ -86,6 +86,7 @@ li {
 
 .header__img {
 	grid-area: header-image;
+	background-image: url("../../../public/myPhoto.jpg");
 	position: absolute;
 	border-radius: 2rem;
 	width: 100%;
@@ -93,6 +94,7 @@ li {
 
 .header__figcaption {
 	grid-area: header-greatings;
+	
 }
 
 @media (max-width: 750px) {

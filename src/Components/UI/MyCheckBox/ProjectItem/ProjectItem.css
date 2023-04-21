@@ -43,6 +43,10 @@
 	transform: rotateY(180deg);
 }
 
+.project-list__item-back > p {
+	margin-bottom: 1.5rem;
+}
+
 .project-list__item-btn {
 	padding: 1rem;
 	border-radius: 2rem;

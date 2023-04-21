@@ -30,17 +30,13 @@ export default function AboutMe() {
 
 	return (
 		<section className="about-me" id="about-me">
-			<div
-				onMouseMove={(e) => watchMouseMove(e)}
-				className="about-me__photo"
-			>
+			<div onMouseMove={(e) => watchMouseMove(e)} className="about-me__photo">
 				<img
 					style={{
 						WebkitMaskPosition: `${leftMousePos.x}px ${leftMousePos.y}px`,
-						
 					}}
 					className="about-me__mask"
-					src="../images/homeImg.png"
+					src="./homeImg.png"
 					alt="look at me"
 				/>
 			</div>

@@ -13,17 +13,17 @@ export default function ProjectList() {
 	const myProjectsArr = [
 		{
 			description: dataMolaDescr,
-			src: "../images/DataMola.png",
+			src: "./DataMola.png",
 			url: "https://kolyavol.github.io/DataMola/",
 		},
 		{
 			description: itlogyDescr,
-			src: "../images/ItLogy.png",
+			src: "./ItLogy.png",
 			url: "https://kolyavol.github.io/car-hw/",
 		},
 		{
 			description: webshopDescr,
-			src: "../images/WebShop.png",
+			src: "./WebShop.png",
 			url: "https://github.com/KolyaVol",
 		},
 	];
@@ -33,7 +33,7 @@ export default function ProjectList() {
 			<div className="project-list__template">
 				{myProjectsArr.map((item) => (
 					<ProjectItem
-						children={`${item.description} "${prItemButton}"`}
+						children={`${item.description}`}
 						src={item.src}
 						url={item.url}
 						key={item.url}

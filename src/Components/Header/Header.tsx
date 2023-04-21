@@ -87,7 +87,7 @@ export default function Header() {
 		<header id="header">
 			<div className="nav-box">
 				<a href="#header" className="logo words">
-					<img src="../images/logo.svg" alt="logo" />
+					<img src="./logo.svg" alt="logo" />
 				</a>
 				<div
 					className={isNavOpen ? "mobile-burger" : "mobile-burger__active"}
@@ -133,8 +133,8 @@ export default function Header() {
 			<figure className="header__figure">
 				<img
 					className="header__img"
-					src="../images/myPhoto.jpg"
-					alt="look at me"
+					src="./myPhoto.jpg"
+					alt="its me!"
 					onMouseMove={(e) => mouseMoveHandler(e)}
 					onMouseLeave={() => {
 						mouseLeaveHandler();
