@@ -13,6 +13,7 @@ interface LangState {
 		dataMolaDescr: string;
 		itlogyDescr: string;
 		webshopDescr: string;
+		shelterDescr: string;
 	};
 }
 let initialState: LangState = {
@@ -31,6 +32,7 @@ let initialState: LangState = {
 		dataMolaDescr: "Test project created on JS HTML/CSS",
 		itlogyDescr: "Angular car rent service",
 		webshopDescr: "React/Redux web shop with auth and cart",
+		shelterDescr: "JS site for pets shelter with infinite sliders and navigation",
 	},
 };
 
@@ -54,6 +56,7 @@ export const langSlice = createSlice({
 				dataMolaDescr: "Test project created on JS HTML/CSS",
 				itlogyDescr: "Angular car rent service",
 				webshopDescr: "React/Redux web shop with auth and cart",
+				shelterDescr: "JS site for pets shelter with infinite sliders and navigation",
 			};
 		},
 		toRuLang(state) {
@@ -72,6 +75,7 @@ export const langSlice = createSlice({
 				dataMolaDescr: "Тестовый проект написанный на JS HTML/CSS",
 				itlogyDescr: "Приложение для аренды авто на Angular",
 				webshopDescr: "React/Redux магазин с авторизацией и корзиной",
+				shelterDescr: "Сайт приюта животных на чистом JS с бесконечными слайдерами и навигацией",
 			};
 		},
 	},
