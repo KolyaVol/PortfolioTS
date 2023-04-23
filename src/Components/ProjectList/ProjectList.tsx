@@ -24,7 +24,7 @@ export default function ProjectList() {
 		{
 			description: shelterDescr,
 			src: "./shelter.png",
-			url: "https://kolyavol.github.io/shelter/",
+			url: "https://kolyavol.github.io/Shelter/",
 		},
 	];
 	return (

@@ -78,7 +78,7 @@ export default function Header() {
 	return (
 		<header id="header">
 			<div className="nav-box">
-				<a href="#header" className="logo words">
+				<a href="#header" className="logo">
 					<img src="./logo.svg" alt="logo" />
 				</a>
 				<div
