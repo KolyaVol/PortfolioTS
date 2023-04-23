@@ -19,7 +19,7 @@ export default function ProjectList() {
 		{
 			description: webshopDescr,
 			src: "./WebShop.png",
-			url: "https://github.com/KolyaVol",
+			url: "https://storied-gnome-cbc643.netlify.app/webshop",
 		},
 	];
 	return (
