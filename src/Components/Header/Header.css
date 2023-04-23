@@ -166,7 +166,7 @@ li {
 		visibility: visible;
 	}
 	
-	.mobile-burger__active {
+	.mobile-burger.active {
 		position: fixed;
 		display: flex;
 		flex-direction: column;
@@ -176,35 +176,26 @@ li {
 		z-index: 12;
 	}
 
-	.mobile-burger > div,
-	.mobile-burger::before,
-	.mobile-burger::after {
-		content: "";
+	
+	.mobile-burger div {
 		width: 4rem;
 		height: 0.5rem;
 		border-radius: 1rem;
 		background-color: var(--tc);
-		margin: 0.2rem;
-	}
-
-	.mobile-burger__active > div,
-	.mobile-burger__active::before,
-	.mobile-burger__active::after {
-		content: "";
-		width: 4rem;
-		height: 0.5rem;
-		border-radius: 1rem;
-		background-color: var(--tc);
+		opacity: 1;
 		margin: 0.2rem;
 		transition: 0.5s;
 	}
 
-	.mobile-burger::before {
+	.mobile-burger.active div:first-child {
 		transform: translateY(0.9rem) rotate(45deg);
 		transition: 1s;
 	}
+	.mobile-burger.active div:nth-child(2) {
+		opacity: 0;
+	}
 
-	.mobile-burger::after {
+	.mobile-burger.active div:last-child {
 		transform: translateY(-0.9rem) rotate(-45deg);
 		transition: 1s;
 	}

@@ -11,8 +11,15 @@
 
 .project-list__template {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)) ;
+  grid-template-columns: repeat(auto-fill, minmax(32rem, 1fr)) ;
   grid-template-rows: repeat(auto-fill, minmax(22rem, 1fr));
-  grid-gap: 2vw;
+  grid-column-gap: 2vw;
+  grid-row-gap: 4rem;
 }
 
+@media (max-width: 500px) {
+.project-list__template {
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)) ;
+  
+}
+}

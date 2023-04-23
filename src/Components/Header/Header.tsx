@@ -82,10 +82,12 @@ export default function Header() {
 					<img src="./logo.svg" alt="logo" />
 				</a>
 				<div
-					className={isNavOpen ? "mobile-burger" : "mobile-burger__active"}
+					className={isNavOpen ? "mobile-burger active" : "mobile-burger "}
 					onClick={() => setIsNavOpen(!isNavOpen)}
 				>
-					<div className="mobile-burger__line"></div>
+					<div ></div>
+					<div ></div>
+					<div ></div>
 				</div>
 				<nav>
 					<ul
