@@ -29,7 +29,7 @@ export default function AboutMe() {
 	}
 
 	return (
-		<section className="about-me" id="about-me">
+		<figure className="about-me" id="about-me">
 			<div onMouseMove={(e) => watchMouseMove(e)} className="about-me__photo">
 				<img
 					style={{
@@ -40,7 +40,7 @@ export default function AboutMe() {
 					alt="look at me"
 				/>
 			</div>
-			<p className="about-me__description words">{lang.myStory} </p>
-		</section>
+			<figcaption className="about-me__description words">{lang.myStory} </figcaption>
+		</figure>
 	);
 }

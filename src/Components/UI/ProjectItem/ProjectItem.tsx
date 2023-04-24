@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import { useAppSelector } from "../../../../hooks/redux";
+import { useAppSelector } from "../../../hooks/redux";
 import "./ProjectItem.css";
 
 interface PrItemProps {

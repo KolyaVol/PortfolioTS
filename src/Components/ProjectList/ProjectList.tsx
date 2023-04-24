@@ -1,10 +1,15 @@
 import { useAppSelector } from "../../hooks/redux";
-import ProjectItem from "../UI/MyCheckBox/ProjectItem/ProjectItem";
+import ProjectItem from "../UI/ProjectItem/ProjectItem";
 import "./ProjectList.css";
 
 export default function ProjectList() {
-	const { myProjectsTitle, dataMolaDescr, itlogyDescr, webshopDescr, shelterDescr } =
-		useAppSelector((state) => state.langReducer.lang);
+	const {
+		myProjectsTitle,
+		dataMolaDescr,
+		itlogyDescr,
+		webshopDescr,
+		shelterDescr,
+	} = useAppSelector((state) => state.langReducer.lang);
 	const myProjectsArr = [
 		{
 			description: dataMolaDescr,

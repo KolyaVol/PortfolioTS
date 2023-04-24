@@ -34,7 +34,7 @@
 
 @media (max-width: 1000px) {
 	.about-me {
-		flex-direction: column;
+		flex-direction: column-reverse;
 	}
 	.about-me__photo,
 	.about-me__description {
