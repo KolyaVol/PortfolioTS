@@ -36,7 +36,7 @@ export default function AboutMe() {
 						WebkitMaskPosition: `${leftMousePos.x}px ${leftMousePos.y}px`,
 					}}
 					className="about-me__mask"
-					src="./homeImg.png"
+					src="./lama.jpg"
 					alt="look at me"
 				/>
 			</div>
