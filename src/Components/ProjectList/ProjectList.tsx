@@ -11,27 +11,37 @@ export default function ProjectList() {
 		shelterDescr,
 	} = useAppSelector((state) => state.langReducer.lang);
 	const myProjectsArr = [
-		{
-			description: dataMolaDescr,
-			src: "./DataMola.png",
-			url: "https://kolyavol.github.io/DataMola/",
-		},
-		{
-			description: itlogyDescr,
-			src: "./ItLogy.png",
-			url: "https://kolyavol.github.io/car-hw/",
-		},
-		{
-			description: webshopDescr,
-			src: "./WebShop.png",
-			url: "https://storied-gnome-cbc643.netlify.app/",
-		},
-		{
-			description: shelterDescr,
-			src: "./shelter.png",
-			url: "https://kolyavol.github.io/Shelter/",
-		},
-	];
+    {
+      description: webshopDescr,
+      src: "./WebShop.png",
+      url: "https://storied-gnome-cbc643.netlify.app/",
+    },
+    {
+      description: shelterDescr,
+      src: "./shelter.png",
+      url: "https://kolyavol.github.io/Shelter/",
+    },
+    {
+      description: itlogyDescr,
+      src: "./ItLogy.png",
+      url: "https://kolyavol.github.io/car-hw/",
+    },
+    {
+      description: dataMolaDescr,
+      src: "./DataMola.png",
+      url: "https://kolyavol.github.io/DataMola/",
+    },
+    {
+      description: dataMolaDescr,
+      src: "./minesweeper.png",
+      url: "https://kolyavol.github.io/Minesweeper/",
+    },
+    {
+      description: dataMolaDescr,
+      src: "./minesweeper.png",
+      url: "https://kolyavol.github.io/virtual-keyboard/",
+    },
+  ];
 	return (
 		<section className="project-list__container" id="projects">
 			<h2 className="project-list__title">{myProjectsTitle}</h2>
