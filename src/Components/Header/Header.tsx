@@ -9,15 +9,6 @@ export default function Header() {
 
   const lang = useAppSelector((state) => state.langReducer.lang);
 
-  const mouseMoveHandler = (e: any) => {
-    setClientXY({ x: (e.pageX * 0.8) / 8, y: (e.pageY * 0.8) / 8 });
-  };
-  const mouseLeaveHandler = () => {
-    setTimeout(() => {
-      setClientXY({ x: 0, y: 0 });
-    }, 1000);
-  };
-
   return (
     <header id="header">
       <section className="nav-box">
@@ -32,10 +23,6 @@ export default function Header() {
           className="header__img"
           src="./myPhoto.jpg"
           alt="its me!"
-          onMouseMove={(e) => mouseMoveHandler(e)}
-          onMouseLeave={() => {
-            mouseLeaveHandler();
-          }}
           style={{ transform: `translate(${clientXY.x}px, ${clientXY.y}px)` }}
         />
         <figcaption className="header__figcaption words">
