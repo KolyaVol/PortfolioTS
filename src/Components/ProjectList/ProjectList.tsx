@@ -38,7 +38,7 @@ export default function ProjectList() {
     },
     {
       description: dataMolaDescr,
-      src: "./minesweeper.png",
+      src: "./keyboard.png",
       url: "https://kolyavol.github.io/virtual-keyboard/",
     },
   ];
