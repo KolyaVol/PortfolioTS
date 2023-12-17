@@ -7,16 +7,16 @@ import Contacts from "./Components/Footer/Contacts";
 import "./App.css";
 
 function App() {
-	return (
-		<BrowserRouter>
-			<div className="app">
-				<Header></Header>
-				<AboutMe />
-				<MySkills />
-				<ProjectList />
-				<Contacts />
-			</div>
-		</BrowserRouter>
-	);
+  return (
+    <BrowserRouter>
+      <div className="app">
+        <Header />
+        <AboutMe />
+        <MySkills />
+        <ProjectList />
+        <Contacts />
+      </div>
+    </BrowserRouter>
+  );
 }
 export default App;
