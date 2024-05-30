@@ -14,6 +14,7 @@ interface LangState {
     itlogyDescr: string;
     webshopDescr: string;
     shelterDescr: string;
+    contraDescr: string;
   };
 }
 let initialState: LangState = {
@@ -34,6 +35,7 @@ let initialState: LangState = {
     webshopDescr: "React/Redux web shop with auth and cart",
     shelterDescr:
       "JS site for pets shelter with infinite sliders and navigation",
+    contraDescr: "PixiJS shooter video game",
   },
 };
 
@@ -59,6 +61,7 @@ export const langSlice = createSlice({
         webshopDescr: "React/Redux web shop with auth and cart",
         shelterDescr:
           "JS site for pets shelter with infinite sliders and navigation",
+        contraDescr: "PixiJS shooter video game",
       };
     },
     toRuLang(state) {
@@ -79,6 +82,7 @@ export const langSlice = createSlice({
         webshopDescr: "React/Redux магазин с авторизацией и корзиной",
         shelterDescr:
           "Сайт приюта животных на чистом JS с бесконечными слайдерами и навигацией",
+        contraDescr: "PixiJs игра в жанре шутер",
       };
     },
   },

@@ -3,14 +3,15 @@ import ProjectItem from "../UI/ProjectItem/ProjectItem";
 import "./ProjectList.css";
 
 export default function ProjectList() {
-	const {
-		myProjectsTitle,
-		dataMolaDescr,
-		itlogyDescr,
-		webshopDescr,
-		shelterDescr,
-	} = useAppSelector((state) => state.langReducer.lang);
-	const myProjectsArr = [
+  const {
+    myProjectsTitle,
+    dataMolaDescr,
+    itlogyDescr,
+    webshopDescr,
+    shelterDescr,
+    contraDescr,
+  } = useAppSelector((state) => state.langReducer.lang);
+  const myProjectsArr = [
     {
       description: webshopDescr,
       src: "./WebShop.png",
@@ -25,6 +26,11 @@ export default function ProjectList() {
       description: itlogyDescr,
       src: "./ItLogy.png",
       url: "https://kolyavol.github.io/car-hw/",
+    },
+    {
+      description: contraDescr,
+      src: "./contra.png",
+      url: "https://kolyavol.github.io/PixiJs-Contra/",
     },
     {
       description: dataMolaDescr,
@@ -42,19 +48,19 @@ export default function ProjectList() {
       url: "https://kolyavol.github.io/virtual-keyboard/",
     },
   ];
-	return (
-		<section className="project-list__container" id="projects">
-			<h2 className="project-list__title">{myProjectsTitle}</h2>
-			<div className="project-list__template">
-				{myProjectsArr.map((item) => (
-					<ProjectItem
-						children={`${item.description}`}
-						src={item.src}
-						url={item.url}
-						key={item.url}
-					></ProjectItem>
-				))}
-			</div>
-		</section>
-	);
+  return (
+    <section className="project-list__container" id="projects">
+      <h2 className="project-list__title">{myProjectsTitle}</h2>
+      <div className="project-list__template">
+        {myProjectsArr.map((item) => (
+          <ProjectItem
+            children={`${item.description}`}
+            src={item.src}
+            url={item.url}
+            key={item.url}
+          ></ProjectItem>
+        ))}
+      </div>
+    </section>
+  );
 }
